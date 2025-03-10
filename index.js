@@ -9,16 +9,15 @@ hamMenu.addEventListener("click", () => {
 const main = document.getElementById("main");
 const input = document.getElementById("search");
 const searchButton = document.querySelector(".searchbtn");
-const apiKey = "202cd8db"; // API Key per OMDB
+const apiKey = "202cd8db"; // per OMDB
 const animeApiUrl = "https://api.jikan.moe/v4/anime";
 
-// Aggiungi evento click al bottone di ricerca
 searchButton.addEventListener("click", () => {
   recuperaFilm();
   recuperaAnime();
 });
 
-// **Funzione per recuperare i FILM da OMDB API**
+// Funzione per recuperare i FILM
 async function recuperaFilm() {
   const query = input.value.trim();
   if (!query) return;
@@ -49,7 +48,7 @@ async function recuperaFilm() {
   }
 }
 
-// **Funzione per recuperare gli ANIME da Jikan API**
+// Funzione per recuperare gli ANIME
 async function recuperaAnime() {
   const query = input.value.trim();
   if (!query) return;
@@ -76,9 +75,9 @@ async function recuperaAnime() {
   }
 }
 
-// **Funzione per mostrare FILM
+// Funzione per mostrare FILM
 function showMovies(datas) {
-  main.innerHTML = ""; // Pulisce il contenuto precedente
+  main.innerHTML = "";
 
   const container = document.createElement("div");
   container.classList.add("movies-container");
