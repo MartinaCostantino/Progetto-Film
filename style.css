@@ -1,6 +1,8 @@
 :root {
-    --colore-principale: ;
-    --colore-secondario: ;
-    --font-titoli: ;
-    --font-corpo: ;
+    --colore-principale: #00ffff var(--colore-principale);
+    --colore-secondario:#45becd var(--colore-secondario) ;
+    --font-base:white var(--font-base);
+    --colore-background: #042260 var(--colore-background);
+    --colore-terzo: #aeeeee var(--colore-terzo);
+    --colore-quarto: #09aee0 var(--colore-quarto);
   }
