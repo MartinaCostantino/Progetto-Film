@@ -12,8 +12,8 @@
 }
 
 body {
-  background-color: rgb(14, 13, 13);
-  color: white;
+  background-color: rgb(11, 13, 102);
+  color: rgb(255, 255, 255);
 }
 
 .navbar_main {
@@ -23,7 +23,12 @@ body {
   display: flex;
   padding: 3% 5%;
   justify-content: space-between;
-  background-color: rgb(14, 13, 13);
+  background-color: rgb(11, 13, 102);
+  outline: 2px solid rgb(0, 255, 255);
+}
+
+.searchs {
+  z-index: 11;
 }
 
 .logo {
@@ -127,7 +132,7 @@ body {
   background-image: linear-gradient(
     to top,
     rgba(0, 0, 0, 0) 0,
-    rgba(0, 0, 0, 0) 90%,
+    rgba(0, 0, 0, 0) 92%,
     rgba(0, 0, 0, 0.8) 100%
   );
 }
