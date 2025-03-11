@@ -28,12 +28,35 @@ body {
 }
 
 .searchs {
+  display: flex;
+  width: 30%;
+  height: 100%;
+}
+
+.search_input {
+  display: flex;
+  border-radius: 30px;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  border-color: rgb(8, 218, 255);
+  border-style: double;
+  background-color: rgb(178, 243, 243);
+  padding: 4px;
+}
+
+.searchbtn {
+  display: flex;
+  border-radius: 10px;
+  padding: 4px;
+  margin-left: 5px;
+  border-color: rgb(8, 218, 255);
+  border-style: double;
+  background-color: rgb(178, 243, 243);
   z-index: 11;
 }
 
 .logo {
-  color: white;
-  font-size: 30px;
 }
 
 .link_navbar {
@@ -52,7 +75,7 @@ body {
   width: 40px;
   margin-left: auto;
   position: relative;
-  z-index: 10;
+  z-index: 11;
   display: none;
 }
 
@@ -152,10 +175,49 @@ body {
   font-size: 2rem;
 }
 
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-top: 15%;
+}
+
+.anime-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+  border: solid rgb(5, 151, 196);
+  border-radius: 50px;
+  background-color: #07b4a0;
+  width: 90%;
+  height: 100%;
+  background-image: url("asset/ec4c69a298e34341d9172073ee434dd0.jpg");
+  background-repeat: no-repeat;
+  margin-left: 5%;
+  padding: 3%;
+  border: 3%;
+  margin: 3%;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 768px) {
   .ham-menu {
     display: block;
   }
+
   .link_navbar {
     display: none;
   }

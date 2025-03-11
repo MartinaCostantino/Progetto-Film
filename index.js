@@ -19,7 +19,7 @@ searchButton.addEventListener("click", () => {
 
 // Funzione per recuperare i FILM
 async function recuperaFilm() {
-  const query = input.value.trim();
+  const query = input.value;
   if (!query) return;
 
   const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`;
@@ -50,7 +50,7 @@ async function recuperaFilm() {
 
 // Funzione per recuperare gli ANIME
 async function recuperaAnime() {
-  const query = input.value.trim();
+  const query = input.value;
   if (!query) return;
 
   const url = `${animeApiUrl}?q=${query}`;
@@ -78,26 +78,30 @@ async function recuperaAnime() {
 // Funzione per mostrare FILM
 function showMovies(datas) {
   main.innerHTML = "";
-
   const container = document.createElement("div");
   container.classList.add("movies-container");
+
+  const titles = document.createElement("h1");
+  titles.classList.add("movies-title");
+  titles.innerText = "Film";
 
   datas.forEach((data) => {
     const div = document.createElement("div");
     div.classList.add("card");
 
     const h2 = document.createElement("h2");
+    h2.classList.add("card-title");
     h2.textContent = data.title;
 
     const img = document.createElement("img");
     img.setAttribute("src", data.image);
     img.setAttribute("alt", data.title);
-
-    div.appendChild(img);
     div.appendChild(h2);
+    div.appendChild(img);
+
     container.appendChild(div);
   });
-
+  main.appendChild(titles);
   main.appendChild(container);
 }
 
@@ -105,22 +109,26 @@ function showMovies(datas) {
 function showAnime(datas) {
   const container = document.createElement("div");
   container.classList.add("movies-container");
-
+  const title = document.createElement("h1");
+  title.classList.add("anime-title");
+  title.innerText = "Anime";
   datas.forEach((data) => {
     const div = document.createElement("div");
     div.classList.add("card");
 
     const h2 = document.createElement("h2");
+    h2.classList.add("card-title");
     h2.textContent = data.title;
 
     const img = document.createElement("img");
     img.setAttribute("src", data.image);
     img.setAttribute("alt", data.title);
 
-    div.appendChild(img);
     div.appendChild(h2);
+    div.appendChild(img);
+
     container.appendChild(div);
   });
-
+  main.appendChild(title);
   main.appendChild(container);
 }
