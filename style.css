@@ -57,6 +57,7 @@ body {
 }
 
 .logo {
+  z-index: 11;
 }
 
 .link_navbar {
