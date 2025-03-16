@@ -380,6 +380,36 @@ body {
   z-index: 2;
 }
 
+.carousel.prev .list .item:nth-child(2) img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage {
+  to {
+    width: 150px;
+    height: 220px;
+    border-radius: 20px;
+    left: 50%;
+    bottom: 50px;
+  }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+  width: 0;
+  overflow: hidden;
+  animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-last-child(2) .author,
+.carousel.prev .list .item:nth-last-child(2) .title,
+.carousel.prev .list .item:nth-last-child(2) .topic,
+.carousel.prev .list .item:nth-last-child(2) .description,
+.carousel.prev .list .item:nth-last-child(2) .buttons {
+  animation: contentOut 1.5s linear 1 forwards;
+}
 .hero_title {
   text-align: center;
   font-size: 2rem;
