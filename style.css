@@ -38,7 +38,7 @@ body {
   border-radius: 30px;
   height: 100%;
   width: 100%;
-  z-index: 101;
+  z-index: 102;
   border-color: rgb(8, 218, 255);
   border-style: double;
   background-color: rgb(178, 243, 243);
@@ -53,11 +53,11 @@ body {
   border-color: rgb(8, 218, 255);
   border-style: double;
   background-color: rgb(178, 243, 243);
-  z-index: 101;
+  z-index: 102;
 }
 
 .logo {
-  z-index: 101;
+  z-index: 102;
 }
 
 .link_navbar {
@@ -69,7 +69,7 @@ body {
   color: white;
   font-size: 18px;
   text-decoration: none;
-  z-index: 101;
+  z-index: 102;
 }
 
 .ham-menu {
@@ -224,7 +224,7 @@ body {
 }
 
 .carousel .list .item .content .topic {
-  color: orange;
+  color: rgb(0, 255, 242);
 }
 
 /* thumbnail*/
@@ -234,7 +234,7 @@ body {
   bottom: 50px;
   left: 50%;
   width: max-content;
-  z-index: 100;
+  z-index: 101;
   display: flex;
   gap: 20px;
 }
@@ -286,7 +286,7 @@ body {
   font-weight: bold;
   font-size: large;
   transition: 0.5s;
-  z-index: 100;
+  z-index: 101;
 }
 
 .arrows button:hover {
@@ -295,7 +295,7 @@ body {
 }
 
 .carousel .list .item:nth-child(1) {
-  z-index: 100;
+  z-index: 101;
 }
 
 .carousel .list .item:nth-child(1) .author,
@@ -374,7 +374,7 @@ body {
 /* effetto prev*/
 
 .carousel.prev .list .item:nth-child(2) {
-  z-index: 100;
+  z-index: 101;
 }
 
 .carousel.prev .list .item:nth-child(2) img {
