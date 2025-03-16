@@ -17,61 +17,51 @@ searchButton.addEventListener("click", () => {
   recuperaAnime();
 });
 
-// Funzione per recuperare i FILM
 async function recuperaFilm() {
   const query = input.value;
   if (!query) return;
 
-  const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`;
-  console.log("Chiamata API Film:", url);
-
   try {
-    const response = await fetch(url);
+    const response = await fetch(
+      `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`
+    );
     const data = await response.json();
 
-    if (data.Response === "True" && data.Search) {
-      const filmList = data.Search.map((film) => ({
-        title: film.Title,
-        image: film.Poster !== "N/A" ? film.Poster : "placeholder.jpg",
-      }));
-
-      showMovies(filmList);
+    if (data.Search) {
+      showMovies(
+        data.Search.map((film) => ({
+          title: film.Title,
+          image: film.Poster !== "N/A" ? film.Poster : "placeholder.jpg",
+        }))
+      );
     } else {
-      console.log("Nessun film trovato:", data.Error);
-      main.innerHTML =
-        "<p style='color: white; text-align: center;'>Nessun film trovato</p>";
+      main.innerHTML = "<p>Nessun film trovato</p>";
     }
-  } catch (error) {
-    console.error("Errore nel recupero dei film:", error);
-    main.innerHTML =
-      "<p style='color: white; text-align: center;'>Errore nel recupero dei dati</p>";
+  } catch {
+    main.innerHTML = "<p>Errore nel recupero dei dati</p>";
   }
 }
 
-// Funzione per recuperare gli ANIME
 async function recuperaAnime() {
   const query = input.value;
   if (!query) return;
 
-  const url = `${animeApiUrl}?q=${query}`;
-  console.log("Chiamata API Anime:", url);
-
   try {
-    const response = await fetch(url);
+    const response = await fetch(`https://api.jikan.moe/v4/anime?q=${query}`);
     const data = await response.json();
 
-    if (data.data && data.data.length > 0) {
-      const animeList = data.data.map((anime) => ({
-        title: anime.title,
-        image: anime.images.jpg.image_url,
-      }));
-
-      showAnime(animeList);
+    if (data.data.length) {
+      showAnime(
+        data.data.map((anime) => ({
+          title: anime.title,
+          image: anime.images.jpg.image_url,
+        }))
+      );
     } else {
-      console.log("Nessun anime trovato.");
+      main.innerHTML += "<p>Nessun anime trovato</p>";
     }
-  } catch (error) {
-    console.error("Errore nel recupero degli anime:", error);
+  } catch {
+    main.innerHTML += "<p>Errore nel recupero degli anime</p>";
   }
 }
 
