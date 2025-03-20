@@ -42,18 +42,19 @@ body {
   border-color: rgb(8, 218, 255);
   border-style: double;
   background-color: rgb(178, 243, 243);
-  padding: 4px;
+  padding: 6px;
 }
 
 .searchbtn {
   display: flex;
   border-radius: 10px;
-  padding: 4px;
+  padding: 6px;
   margin-left: 5px;
-  border-color: rgb(8, 218, 255);
-  border-style: double;
-  background-color: rgb(178, 243, 243);
-  z-index: 102;
+  border-color: rgb(14, 210, 245);
+  z-index: 103;
+  box-shadow: inset 1px 1px 9px 0px aqua;
+  background-color: #255656;
+  color: white;
 }
 
 .logo {
@@ -69,7 +70,7 @@ body {
   color: white;
   font-size: 18px;
   text-decoration: none;
-  z-index: 101;
+  z-index: 103;
 }
 
 .ham-menu {
@@ -77,7 +78,7 @@ body {
   width: 40px;
   margin-left: auto;
   position: relative;
-  z-index: 101;
+  z-index: 103;
   display: none;
 }
 
@@ -91,6 +92,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   transition: 0.3s ease;
+  z-index: 103;
 }
 
 .ham-menu span:nth-child(1) {
@@ -115,6 +117,7 @@ body {
   text-align: center;
   font-size: 2rem;
   transition: 0.3s ease;
+  z-index: 103;
 }
 
 .off-screen-menu.active {
@@ -226,7 +229,7 @@ body {
 }
 
 .carousel .list .item .content .topic {
-  color: orange;
+  color: rgb(0, 217, 255);
 }
 
 /* thumbnail*/
@@ -419,7 +422,7 @@ body {
 .time {
   width: 0%;
   height: 5px;
-  background-color: orange;
+  background-color: rgb(0, 195, 255);
   position: absolute;
   z-index: 104;
   top: 0;
@@ -447,36 +450,96 @@ body {
 }
 .movies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding-top: 10%;
+  padding-top: 2%;
 }
 
 .anime-title {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5%;
+}
+
+.movies-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .card {
+  width: 250px;
+  background-color: #aeeeee;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  background-image: url("asset/sfondo.jpg");
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card .nome {
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  font-family: "Cormorant Garamond";
+}
+
+.card .rating {
+  font-size: 16px;
+  color: rgb(200, 200, 32);
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: "Cormorant Garamond";
+  font-weight: bold;
+}
+
+.card .release {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  color: white;
+  font-family: "Cormorant Garamond";
+  font-weight: bold;
+}
+
+.card .description {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-image: url("asset/sfondo.jpg");
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: bottom 0.5s ease-in-out;
+  height: 60%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
-  border: solid rgb(5, 151, 196);
-  border-radius: 50px;
-  background-color: #07b4a0;
-  width: 90%;
-  height: 100%;
-  background-image: url("asset/ec4c69a298e34341d9172073ee434dd0.jpg");
-  background-repeat: no-repeat;
-  margin-left: 5%;
-  padding: 3%;
-  border: 3%;
-  margin: 3%;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Cormorant Garamond";
+  font-weight: bold;
+}
+
+.card:hover .description {
+  bottom: 0;
 }
 
 .card-title {
