@@ -22,7 +22,44 @@
       content="consigli film, consigli serie tv, consigli anime, migliori film, migliori serie tv, migliori anime, film da vedere, serie tv da vedere, anime da vedere, novità film, novità serie tv,novità anime,"
     />
     <link rel="stylesheet" href="style.css" />
-   </head>
-   <body>
-    
-   </body>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="containerCardMovies">
+      <h3>Film più recenti</h3>
+      <div class="caroselloContainerFilm">
+        <button class="sinistra" id="filmS" onclick="scrollCarouselLeft(event)">
+          &#10094;
+        </button>
+        <div class="carosello" id="carosello"></div>
+        <button class="destra" onclick="scrollCarouselRight()">&#10095;</button>
+      </div>
+      <h3>Serie TV più recenti</h3>
+      <div class="caroselloContainerSerie">
+        <button
+          class="sinistra"
+          id="serietvS"
+          onclick="scrollCarouselLeft(event)"
+        >
+          &#10094;
+        </button>
+        <div class="caroselloSerie" id="caroselloSerie"></div>
+        <button class="destra" onclick="scrollCarouselRight()">&#10095;</button>
+      </div>
+      <h3>Film e Serie TV più piaciuti</h3>
+      <div class="caroselloContainerTop">
+        <button class="sinistra" id="topS" onclick="scrollCarouselLeft(event)">
+          &#10094;
+        </button>
+        <div class="caroselloTop" id="caroselloTop"></div>
+        <button class="destra" onclick="scrollCarouselRight()">&#10095;</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
