@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+
+    <link rel="icon" href="" type="image/avif" />
+    <link rel="icon" href="asset/logo/LOGO-ICEMOVIES-iconapiccola.png" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>IceMovies/Cerca</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Scopri cosa vedere stasera! Trova recensioni, consigli, notizie e approfondimenti sui tuoi titoli preferiti."
+    />
+    <meta
+      name="keywords"
+      content="consigli film, consigli serie tv, consigli anime, migliori film, migliori serie tv, migliori anime, film da vedere, serie tv da vedere, anime da vedere, novità film, novità serie tv,novità anime,"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+<body id="body-cerca">
+    <nav class="navbar_main_pc">
+        <div class="logo_pc"><img src="asset/logo/LOGO-ICEMOVIES.png" /></div>
+    <div class="tasti-pag-cerca">        
+        <div class="searchs_pc">
+          <input
+            type="text"
+            class="search_input_p"
+            id="search-p"
+            placeholder="Ricerca..."
+            autocomplete="off"
+          />
+          <button class="searchbtn_pc"><img src="icons8-ricerca-96.png" alt="carca"></button>
+        </div>
+        <a href="index.html" class="torna-home-btn"><img src="icons8-house-96.png" alt="torna alla home page"></a>
+    </div>    
+      </nav>
+   <main id="main-cerca"> <div class="presentazione"><h2>Sei alla ricerca del film perfetto per la serata o vuoi scoprire il tuo prossimo anime preferito? Sei nel posto giusto! 🔍</h2></div></main>   
+    <footer>
+        <div class="footer_info">
+          <div class="footer-logo">
+            <img
+              class="footlogo"
+              src="asset/logo/LOGO-ICEMOVIES.png"
+              alt="LOGO-ICEMOVIES"
+            />
+          </div>
+          <div class="footer-contact">
+            <h4 class="footer-contact-title">Contatti</h4>
+            <div class="footer-contatti">
+              <img
+                class="icon-contact"
+                src="asset/icone/icons-email-96.png"
+                alt="email-icon"
+              />
+              <p style="font-weight: 700">Email:</p>
+              <p style="font-style: italic">team-1@gmail.com</p>
+            </div>
+            <div class="footer-contatti">
+              <img
+                class="icon-contact"
+                src="asset/icone/icons-tell-96.png"
+                alt="telefono-icon"
+              />
+              <p style="font-weight: 700">Telefono:</p>
+              <p style="font-style: italic">345 666 5551</p>
+            </div>
+          </div>
+          <div class="footer-sali">
+            <button
+              class="btn-torna-su"
+              onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            >
+              TORNA SU' ⬆
+            </button>
+          </div>
+        </div>
+        <div class="copyright-section">
+          <p>&copy; Fullstack34 Team1 <span id="year"></span></p>
+        </div>
+      </footer>
+    <Script>
+    const main = document.getElementById("main-cerca");
+     const input = document.getElementById("search-p");
+     const searchButton = document.querySelector(".searchbtn_pc");
+     const apiKey = "202cd8db"; // per OMDB
+     const animeApiUrl = "https://api.jikan.moe/v4/anime";
+
+searchButton.addEventListener("click", () => {
+  recuperaFilm();
+  recuperaAnime();
+});
+async function recuperaFilm() {
+    const query = input.value;
+    if (!query) return;
+  
+    try {
+      const response = await fetch(
+        `https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`
+      );
+      const data = await response.json();
+if (data.Search) {
+      const moviesDetails = await Promise.all(
+        data.Search.map(async (movie) => {
+          const detailsResponse = await fetch(
+            `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`
+          );
+          return await detailsResponse.json();
+        })
+      );
+
+      const sortedMovies = moviesDetails
+        .filter((movie) => movie.Released !== "N/A")
+        .sort((a, b) => new Date(b.Released) - new Date(a.Released))
+        .slice(0, 20);
+        showMovies(sortedMovies);
+        console.log(sortedMovies)
+    } else {
+      console.error("Nessun film trovato");
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+  
+  async function recuperaAnime() {
+    const query = input.value;
+    if (!query) return;
+  
+    try {
+      const response = await fetch(`https://api.jikan.moe/v4/anime?q=${query}`);
+      const data = await response.json();
+  
+      if (data.data.length) {
+        showAnime(
+          data.data.map((anime) => ({
+            title: anime.title,
+            image: anime.images.jpg.image_url,
+          }))
+        );
+      } else {
+        main.innerHTML += "<p>Nessun anime trovato</p>";
+      }
+    } catch {
+      main.innerHTML += "<p>Errore nel recupero degli anime</p>";
+    }
+  }
+  
+  // Funzione per mostrare FILM
+  
+  const container = document.createElement("div");
+  container.classList.add("movies-container");
+  function showMovies(films) {
+    main.innerHTML = "";
+    films.forEach((film) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const immagine = document.createElement("img");
+    immagine.className = "immagine";
+    immagine.src = film.Poster !== "N/A" ? film.Poster : "placeholder.jpg";
+
+    const nome = document.createElement("div");
+    nome.className = "nome";
+    nome.textContent = film.Title;
+
+    const rating = document.createElement("div");
+    rating.className = "rating";
+    rating.textContent =
+      film.imdbRating !== "N/A" ? `Rating: ${film.imdbRating}` : "Rating: N/A";
+
+    const releaseDate = document.createElement("div");
+    releaseDate.className = "release";
+    releaseDate.textContent = `Released: ${film.Released}`;
+
+    const description = document.createElement("div");
+    description.className = "description";
+    description.textContent =
+      film.Plot !== "N/A" ? film.Plot : "Descrizione non disponibile.";
+
+    description.style.display = "none";
+
+    card.addEventListener("mouseover", () => {
+      description.style.display = "block";
+    });
+
+    card.addEventListener("mouseout", () => {
+      description.style.display = "none";
+    });
+
+    card.appendChild(immagine);
+    card.appendChild(nome);
+    card.appendChild(rating);
+    card.appendChild(releaseDate);
+    card.appendChild(description);
+    // container.appendChild(card);
+    main.appendChild(card)
+  });
+
+  }
+  
+  // Funzione per mostrare ANIME
+  function showAnime(datas) {
+    main.innerHTML = "";
+    const container = document.createElement("div");
+    container.classList.add("movies-container");
+
+    datas.forEach((data) => {
+      const div = document.createElement("div");
+      div.classList.add("card");
+  
+      const h2 = document.createElement("h2");
+      h2.classList.add("card-title");
+      h2.textContent = data.title;
+  
+      const img = document.createElement("img");
+      img.setAttribute("src", data.image);
+      img.setAttribute("alt", data.title);
+     
+  
+      div.appendChild(img);
+      div.appendChild(h2);
+      
+    //   container.appendChild(div);
+    });
+
+    main.appendChild(div);
+  }
+    </Script>  
+</body>  
