@@ -59,20 +59,44 @@ h3 {
 .carosello {
   display: flex;
   gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .caroselloSerie {
   display: flex;
   gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .caroselloTop {
   display: flex;
   gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .card {
-  width: 250px;
+  min-width: 280px;
+  height: 500px;
+  margin: 0 10px;
   background-color: #aeeeee;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -170,13 +194,14 @@ h3 {
   h3 {
     font-size: 25px;
   }
+
   .card {
-    width: 200px;
-    height: 400px;
+    min-width: 200px;
+    height: 370px;
   }
 
   .card img {
-    height: 270px;
+    height: 250px;
   }
 
   .card .nome {
@@ -206,8 +231,9 @@ h3 {
     color: white;
     font-size: 17px;
   }
+
   .card {
-    width: 100px;
+    min-width: 150px;
     height: 200px;
   }
 

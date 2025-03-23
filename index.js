@@ -5,7 +5,7 @@ const caroselloTop = document.getElementById("caroselloTop");
 
 async function fetchMovies() {
   try {
-    const currentYear = "2024";
+    const currentYear = "2025";
     const SEARCH_QUERY = "movie";
     const responseMovies = await fetch(
       `http://www.omdbapi.com/?s=${SEARCH_QUERY}&y=${currentYear}&type=movie&apikey=${API_KEY}`
@@ -37,7 +37,7 @@ async function fetchMovies() {
 
 async function fetchSeries() {
   try {
-    const currentYear = "2022";
+    const currentYear = "2024";
     const responseSeries = await fetch(
       `http://www.omdbapi.com/?s=series&y=${currentYear}&type=series&apikey=${API_KEY}`
     );
