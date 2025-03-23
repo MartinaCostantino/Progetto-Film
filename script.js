@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             <div class="nome">${anime.title}</div>
             <div class="rating">⭐ ${anime.score}</div>
             <div class="release">${anime.aired.string}</div>
+            <div class="description">${anime.synopsis}</div>
         `;
         return card;
     }
