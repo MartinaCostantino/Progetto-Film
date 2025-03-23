@@ -1,4 +1,5 @@
 // QUIZ
+const navBarQuiz = document.querySelector(".navbar_main_pc")
 const inizaBtn = document.querySelector(".iniza-btn")
     const quiz_conteiner_list = document.querySelector(".quiz_conteiner_list")
     async function trivia() {
@@ -10,6 +11,7 @@ const inizaBtn = document.querySelector(".iniza-btn")
             const question = results.find((x) => x.question)
             creaDomanda(question)
             console.log(question);
+            
         } catch (error) {
             console.error(error)   
         }
@@ -64,8 +66,9 @@ const inizaBtn = document.querySelector(".iniza-btn")
         lose.setAttribute("class","lose")
         win.innerText = "WIN!!! 🎉";
         lose.innerText = "OH NO, YOU LOSE! 🙁";
-        inizaBtn.innerText = "Gioca di nuovo!";
-        quiz_conteiner_list.appendChild(inizaBtn)
+        inizaBtn.innerText = "Play again!";
+        inizaBtn.setAttribute("style", "width: 120px;")
+        navBarQuiz.appendChild(inizaBtn)
 
         risposte.forEach(btn => {
         btn.disabled = true;
@@ -84,8 +87,12 @@ const inizaBtn = document.querySelector(".iniza-btn")
                     quiz_conteiner_list.appendChild(lose)
                 })}    
      }
-
-
+    
+    
+    
 // FOOTER
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+
