@@ -1,36 +1,122 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: linear-gradient(to right, #a8e6ff, #cceeff);
-    color: #033649;
+:root {
+    --colore-principale: #00ffff;
+    --colore-secondario: #45becd;
+    --font-base: white;
+    --colore-background: #042260;
+    --colore-terzo: #aeeeee;
+    --colore-quarto: #09aee0;
+    --font-uno: 'Cormorant Garamond';
+    --font-due: 'Gill Sans';
+  }
+
+body{
+    background-color: var(--colore-background);
+  }
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden; 
 }
-input {
+
+.carousel {
+  display: flex;
+  overflow-x: auto; 
+  gap: 20px; 
+  padding: 20px; 
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; 
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
     padding: 10px;
-    width: 300px;
-    margin: 20px;
-    border: 2px solid #0277bd;
-    border-radius: 5px;
-    background-color: #e1f5fe;
-    color: #033649;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
 }
-.anime-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+.prev {
+    left: 10px;
 }
-.anime-card {
-    background: #b3e5fc;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+
+.next {
+    right: 10px;
 }
-.anime-card:hover {
-    transform: scale(1.05);
+
+
+
+.card {
+  width: 250px; 
+  background-color: #aeeeee;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  background-image: url("asset/logo/sfondo-card.jpg");
+  margin-right: 20px;
+  scroll-snap-align: start; 
 }
-img {
-    max-width: 100%;
-    border-radius: 5px;
+
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card .nome {
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  font-family: "Cormorant Garamond";
+}
+
+.card .rating {
+  font-size: 16px;
+  color: rgb(200, 200, 32);
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: "Cormorant Garamond";
+}
+
+.card .release {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  color: white;
+  font-family: "Cormorant Garamond";
+}
+
+.card .description {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: bottom 0.5s ease-in-out;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Cormorant Garamond";
+}
+
+.card:hover .description {
+  bottom: 0;
 }
