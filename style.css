@@ -76,6 +76,20 @@
              align-items: center;
           }
         }  
+       @media(max-width: 400px) {
+        .btn-vai-Quiz{
+          width: 139px;
+          font-size: 33px;
+          flex-wrap: wrap;
+        }
+        .giocare{
+          padding: 13px 2rem;
+          margin: 20px;
+        }
+        .gioca_titolo{
+          margin: 18px;
+        }
+       } 
         
         
     /* QUIZ SECTION */
@@ -110,7 +124,6 @@
           }
   
           .quiz_conteiner_list {
-           flex: 1;
            display: flex;
            flex-direction: column;
            justify-content: center;
@@ -219,6 +232,8 @@
    @media(max-width: 400px) {
    .quiz_conteiner_list{
      padding: 0;
+     margin: 2rem 1rem;
+    
     } 
     .didascalia_quiz{
      margin: 18px;
@@ -511,6 +526,25 @@
       padding: 30px;
     }
     
-    
+    @media(max-width: 400px) {
+      .presentazione h2{
+        width: 100%;
+        font-size: 45px;
+        padding: 2px;
+      }
+      .navbar_main_pc{
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+     
+      .search_input_p{
+        width: 3rem;
+        min-width: 10rem;
+      }
+      .tasti-pag-cerca{
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
 
     
