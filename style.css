@@ -1,9 +1,3 @@
-:root {
-    --colore-principale: ;
-    --colore-secondario: ;
-    --font-titoli: ;
-    --font-corpo: ;
-  }
 body {
   background-color: #042260;
 }
@@ -31,7 +25,7 @@ h3 {
   padding: 20px 0;
   position: relative;
   width: 100%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .caroselloContainerSerie {
@@ -59,6 +53,7 @@ h3 {
   padding: 20px 0;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .carosello {

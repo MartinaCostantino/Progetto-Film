@@ -3,10 +3,6 @@ const carosello = document.getElementById("carosello");
 const caroselloSerie = document.getElementById("caroselloSerie");
 const caroselloTop = document.getElementById("caroselloTop");
 
-function scrollCarouselLeft(event) {
-  console.log(event.target.id);
-}
-
 async function fetchMovies() {
   try {
     const currentYear = "2024";
@@ -262,6 +258,18 @@ function renderTopRated(tops) {
     card.appendChild(description);
     caroselloTop.appendChild(card);
   });
+}
+
+function scrollCarouselF(direction) {
+  carosello.scrollBy({ left: direction, behavior: "smooth" });
+}
+
+function scrollCarouselS(direction) {
+  caroselloSerie.scrollBy({ left: direction, behavior: "smooth" });
+}
+
+function scrollCarouselT(direction) {
+  caroselloTop.scrollBy({ left: direction, behavior: "smooth" });
 }
 
 fetchMovies();
