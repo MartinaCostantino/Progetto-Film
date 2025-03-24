@@ -2,7 +2,6 @@
 <html lang="it">
   <head>
     <meta charset="utf-8" />
-
     <link rel="icon" href="" type="image/avif" />
 
     <link rel="icon" href="assets/logo/LOGO-ICEMOVIES-iconapiccola.png"/>
@@ -14,7 +13,6 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
       name="viewport"
     />
-    <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
       content="Scopri cosa vedere stasera! Trova recensioni, consigli, notizie e approfondimenti sui tuoi titoli preferiti."
@@ -32,61 +30,186 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-  <!-- GIOCARE -->
-    <section class="giocare">
-      <h4 class="gioca_titolo"> Sei pronto a mettere alla prova la tua cinefilia? Gioca al nostro IceQuiz!</h4>
-    <a class="btn-vai-Quiz" href="quiz.html" >
-      <div class="icona-tasto-container">
-      <img class="icona-tasto" src="asset/logo/LOGO-ICEMOVIES-iconapiccola.png" alt="icona IceMovies">
-    </div>
-    IceQuiz
-  </a>
-    </section>
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer_info">
-        <div class="footer-logo">
-          <img
-            class="footlogo"
-            src="asset/logo/LOGO-ICEMOVIES.png"
-            alt="LOGO-ICEMOVIES"
+    <header>
+      <nav class="navbar_main">
+        <div class="logo"><img src="asset/LOGO-ICEMOVIES.png" /></div>
+        <section class="searchs">
+          <input
+            type="text"
+            class="search_input"
+            id="search"
+            placeholder="Ricerca"
           />
+          <a href="cerca.html" class="searchbtn">cerca</a>
+        </section>
+        <div class="link_navbar">
+          <a href="">I Più Recenti</a>
+          <a href="">Serie Tv</a>
+          <a href="">I Migliori</a>
+          <a href="">Anime</a>
+          <a href="">Quiz</a>
         </div>
-        <div class="footer-contact">
-          <h4 class="footer-contact-title">Contatti</h4>
-          <div class="footer-contatti">
-            <img
-              class="icon-contact"
-              src="asset/icone/icons8-email-96.png"
-              alt=""
-            />
-            <p style="font-weight: 700">Email:</p>
-            <p style="font-style: italic">team-1@gmail.com</p>
+        <div class="ham-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="off-screen-menu">
+          <ul>
+            <li><a href="#">I Più Recenti</a></li>
+            <li><a href="#">Serie Tv</a></li>
+            <li><a href="#">I Migliori</a></li>
+            <li><a href="#">Anime</a></li>
+            <li><a href="#">Quiz</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero_section">
+        <div class="carousel">
+          <div class="list">
+            <div class="item">
+              <img src="asset/wp1817974.jpg" />
+              <div class="content">
+                <div class="author">Qui Trovi</div>
+                <div class="title">I Migliori</div>
+                <div class="topic">Film</div>
+                <div class="description">E Molto Altro..</div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="asset/HD-wallpaper-the-revenant-2015-red-male-movie-man-the-revenant-leonardo-dicaprio-blue-eyes-actor-blue.jpg"
+              />
+              <div class="content">
+                <div class="author">Qui Trovi</div>
+                <div class="title">I Migliori</div>
+                <div class="topic">Film</div>
+                <div class="description">E Molto Altro..</div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="asset/joker.jpg" />
+              <div class="content">
+                <div class="author">Qui Trovi</div>
+                <div class="title">I Migliori</div>
+                <div class="topic">Film</div>
+                <div class="description">E Molto Altro..</div>
+              </div>
+            </div>
+            <div class="item">
+              <img
+                src="asset/43f030dee3f12b0bf4c0c1f57387f200f231ce522223c5a98f72ef559f5d9b84.jpg"
+              />
+              <div class="content">
+                <div class="author">Qui Trovi</div>
+                <div class="title">I Migliori</div>
+                <div class="topic">Film</div>
+                <div class="description">E Molto Altro..</div>
+              </div>
+            </div>
           </div>
-          <div class="footer-contatti">
-            <img
-              class="icon-contact"
-              src="asset/icone/icons8-phone-call-96.png"
-              alt=""
-            />
-            <p style="font-weight: 700">Telefono:</p>
-            <p style="font-style: italic">345 666 5551</p>
+
+          <!-- Thumbnail -->
+          <div class="thumbnail">
+            <div class="item">
+              <img src="asset/ugmntkmthmq71.jpg" />
+              <div class="content">
+                <div class="title">Interstellar</div>
+                <div class="description"></div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="asset/grande.jpg" />
+              <div class="content">
+                <div class="title">La Grande Bellezza</div>
+                <div class="description"></div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="asset/para_.jpg" />
+              <div class="content">
+                <div class="title">Parasite</div>
+                <div class="description"></div>
+              </div>
+            </div>
+            <div class="item">
+              <img src="asset/image.jpg" />
+              <div class="content">
+                <div class="title">Revenant</div>
+                <div class="description"></div>
+              </div>
+            </div>
           </div>
+
+          <!-- Bottoni -->
+          <div class="arrows">
+            <button id="prev"></button>
+            <button id="next">></button>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="footer-sali">
-          <button
-            class="btn-torna-su"
-            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-          >
-            TORNA SU' ⬆
-          </button>
-        </div>
-      </div>
-      <div class="copyright-section">
-        <p>&copy; Fullstack34 Team1 <span id="year"></span></p>
-      </div>
-    </footer>
+      </section>
+    </main>
     <script src="index.js"></script>
+
+
+
+     <!-- GIOCARE -->
+     <section class="giocare">
+        <h4 class="gioca_titolo"> Sei pronto a mettere alla prova la tua cinefilia? Gioca al nostro IceQuiz!</h4>
+      <a class="btn-vai-Quiz" href="quiz.html" >
+        <div class="icona-tasto-container">
+        <img class="icona-tasto" src="asset/logo/LOGO-ICEMOVIES-iconapiccola.png" alt="icona IceMovies">
+      </div>
+      IceQuiz
+    </a>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer_info">
+          <div class="footer-logo">
+            <img
+              class="footlogo"
+              src="asset/logo/LOGO-ICEMOVIES.png"
+              alt="LOGO-ICEMOVIES"
+            />
+          </div>
+          <div class="footer-contact">
+            <h4 class="footer-contact-title">Contatti</h4>
+            <div class="footer-contatti">
+              <img
+                class="icon-contact"
+                src="asset/icone/icons8-email-96.png"
+                alt=""
+              />
+              <p style="font-weight: 700">Email:</p>
+              <p style="font-style: italic">team-1@gmail.com</p>
+            </div>
+            <div class="footer-contatti">
+              <img
+                class="icon-contact"
+                src="asset/icone/icons8-phone-call-96.png"
+                alt=""
+              />
+              <p style="font-weight: 700">Telefono:</p>
+              <p style="font-style: italic">345 666 5551</p>
+            </div>
+          </div>
+          <div class="footer-sali">
+            <button
+              class="btn-torna-su"
+              onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            >
+              TORNA SU' ⬆
+            </button>
+          </div>
+        </div>
+        <div class="copyright-section">
+          <p>&copy; Fullstack34 Team1 <span id="year"></span></p>
+        </div>
+      </footer>
   </body>
 </html>
 
