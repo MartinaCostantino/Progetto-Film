@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
 
     <link rel="icon" href="" type="image/avif" />
+
     <link rel="icon" href="assets/logo/LOGO-ICEMOVIES-iconapiccola.png"/>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>IceMovies</title>
+
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
       name="viewport"
@@ -21,12 +23,70 @@
       name="keywords"
       content="consigli film, consigli serie tv, consigli anime, migliori film, migliori serie tv, migliori anime, film da vedere, serie tv da vedere, anime da vedere, novità film, novità serie tv,novità anime,"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  <!-- GIOCARE -->
+    <section class="giocare">
+      <h4 class="gioca_titolo"> Sei pronto a mettere alla prova la tua cinefilia? Gioca al nostro IceQuiz!</h4>
+    <a class="btn-vai-Quiz" href="quiz.html" >
+      <div class="icona-tasto-container">
+      <img class="icona-tasto" src="asset/logo/LOGO-ICEMOVIES-iconapiccola.png" alt="icona IceMovies">
+    </div>
+    IceQuiz
+  </a>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer_info">
+        <div class="footer-logo">
+          <img
+            class="footlogo"
+            src="asset/logo/LOGO-ICEMOVIES.png"
+            alt="LOGO-ICEMOVIES"
+          />
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-contact-title">Contatti</h4>
+          <div class="footer-contatti">
+            <img
+              class="icon-contact"
+              src="asset/icone/icons8-email-96.png"
+              alt=""
+            />
+            <p style="font-weight: 700">Email:</p>
+            <p style="font-style: italic">team-1@gmail.com</p>
+          </div>
+          <div class="footer-contatti">
+            <img
+              class="icon-contact"
+              src="asset/icone/icons8-phone-call-96.png"
+              alt=""
+            />
+            <p style="font-weight: 700">Telefono:</p>
+            <p style="font-style: italic">345 666 5551</p>
+          </div>
+        </div>
+        <div class="footer-sali">
+          <button
+            class="btn-torna-su"
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          >
+            TORNA SU' ⬆
+          </button>
+        </div>
+      </div>
+      <div class="copyright-section">
+        <p>&copy; Fullstack34 Team1 <span id="year"></span></p>
+      </div>
+    </footer>
+    <script src="quiz.js"></script>
+  </body>
+</html>
 
-   </head>
-   <body>
-    
-   </body>

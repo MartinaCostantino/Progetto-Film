@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz IceMovies</title>
+    <meta charset="utf-8" />
+
+    <link rel="icon" href="" type="image/avif" />
+    <link rel="icon" href="asset/logo/LOGO-ICEMOVIES-iconapiccola.png" />
+    <meta
+      name="description"
+      content="Scopri cosa vedere stasera! Trova recensioni, consigli, notizie e approfondimenti sui tuoi titoli preferiti."
+    />
+    <meta
+      name="keywords"
+      content="consigli film, consigli serie tv, consigli anime, migliori film, migliori serie tv, migliori anime, film da vedere, serie tv da vedere, anime da vedere, novità film, novità serie tv,novità anime,"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+      var _iub = _iub || [];
+      _iub.csConfiguration = {
+        siteId: 3967109,
+        cookiePolicyId: 50077513,
+        lang: "it",
+        storage: { useSiteId: true },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cs.iubenda.com/autoblocking/3967109.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.iubenda.com/cs/gpp/stub.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.iubenda.com/cs/iubenda_cs.js"
+      charset="UTF-8"
+      async
+    ></script>
+</head>
+<body class="body-quiz">
+  <!-- NAV -->
+  <nav class="navbar_main_pc" style="position: block;" >
+    <div class="logo_pc"><img src="asset/logo/LOGO-ICEMOVIES.png" /></div>
+<div class="tasti-pag-cerca" style="gap: 16px" >        
+    <div class="searchs_pc" style="display: none;">
+      <input
+        type="text"
+        class="search_input_p"
+        id="search-p"
+        placeholder="Ricerca..."
+        autocomplete="off"
+      />
+      <button class="searchbtn_pc"><img src="asset/icone/icons8-ricerca-96.png" alt="carca"></button>
+    </div>
+    <a href="cerca.html"class="torna-home-btn"><img src="asset/icone/icons8-ricerca-96.png" alt=" pagina di ricerca"></a>
+    <a href="index.html" class="torna-home-btn"><img src="asset/icone/icons8-house-96.png" alt="torna alla home page"></a>
+</div>    
+  </nav>
+  <!-- QUIZ -->
+  <section class="quiz_section">
+    <div class="quiz_conteiner_list">
+      <h2 class="titolo_sect">Quanto ne sai di film?</h2>
+      <p class="didascalia_quiz">
+        Sei pronto a mettere alla prova la tua cinefilia? Sfodera la tua
+        conoscenza, affina i tuoi ricordi, questo quiz è pensato per te!
+      </p>
+      <button class="iniza-btn">
+        <p>Inizia</p>
+      </button>
+    </div> 
+    <div class="nb-quiz">
+      
+    </div>
+    
+</section>
+ <!-- FOOTER -->
+ <footer>
+  <div class="footer_info">
+    <div class="footer-logo">
+      <img
+        class="footlogo"
+        src="asset/logo/LOGO-ICEMOVIES.png"
+        alt="LOGO-ICEMOVIES"
+      />
+    </div>
+    <div class="footer-contact">
+      <h4 class="footer-contact-title">Contatti</h4>
+      <div class="footer-contatti">
+        <img
+          class="icon-contact"
+          src="asset/icone/icons8-email-96.png"
+          alt="email-icon"
+        />
+        <p style="font-weight: 700">Email:</p>
+        <p style="font-style: italic">team-1@gmail.com</p>
+      </div>
+      <div class="footer-contatti">
+        <img
+          class="icon-contact"
+          src="asset/icone/icons8-phone-call-96.png"
+          alt="telefono-icon"
+        />
+        <p style="font-weight: 700">Telefono:</p>
+        <p style="font-style: italic">345 666 5551</p>
+      </div>
+    </div>
+    <div class="footer-sali">
+      <button
+        class="btn-torna-su"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      >
+        TORNA SU' ⬆
+      </button>
+    </div>
+  </div>
+  <div class="copyright-section">
+    <p>&copy; Fullstack34 Team1 <span id="year"></span></p>
+  </div>
+</footer>
+<script src="index.js"></script>
+</html>

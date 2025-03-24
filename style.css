@@ -1,8 +1,551 @@
 :root {
-  --colore-principale: #00ffff;
-  --colore-secondario: #45becd;
-  --font-base: white;
-  --colore-background: #042260;
-  --colore-terzo: #aeeeee;
-  --colore-quarto: #09aee0;
-}
+
+    --colore-principale: #00ffff;
+    --colore-secondario: #45becd;
+    --font-base: white;
+    --colore-background: #042260;
+    --colore-terzo: #aeeeee;
+    --colore-quarto: #09aee0;
+    --font-uno: 'Cormorant Garamond';
+    --font-due: 'Gill Sans';
+  }
+  body{
+    
+      background: rgb(0,0,0);
+      background: -moz-linear-gradient(top, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+      background: -webkit-linear-gradient(top, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+      background: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+      display: flex;
+      flex-direction: column;
+  }
+
+    /* GIOCARE SECTION */
+    
+    
+    .giocare{
+      align-self: center;
+      font-family: 'Cormorant Garamond' ;
+      color: var(--font-base);
+      max-width: 1000px;
+      border-radius: 0px 13px 0px 21px;
+      margin: 20px;
+      display: flex;
+      padding: 2rem;
+      box-shadow: inset 2px -7px 20px 6px #45becd;
+  
+      }
+      .gioca_titolo{
+       font-size: 30px;
+       flex: 1.5;
+      }    
+    
+     .btn-vai-Quiz{
+      padding: 2rem;
+      text-align: center;
+      text-decoration: none;
+      font-size: 50px;
+      background-color: transparent;
+      border-color: var(--colore-secondario);
+      box-shadow: inset 2px -7px 20px 6px var(--colore-secondario);
+      color: var(--font-base);
+      border-radius: 16px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      color: #4ebfe6;
+      animation: wobble 1s ease-in-out infinite;
+  
+      }
+      .icona-tasto-container{
+      width: 60px;
+      height: 60px;
+      }
+      .icona-tasto{
+       object-fit: cover;
+       width: 100%;
+      }
+      @keyframes wobble {
+          0% { transform: translateX(0); }
+          25% { transform: translateX(-10px) rotate(-5deg); }
+          50% { transform: translateX(10px) rotate(5deg); }
+          75% { transform: translateX(-5px) rotate(-2deg); }
+          100% { transform: translateX(0); }
+        }
+        @media(max-width: 1000px) {
+          .giocare{
+             flex-direction: column;
+             align-items: center;
+          }
+        }  
+       @media(max-width: 400px) {
+        .btn-vai-Quiz{
+          width: 139px;
+          font-size: 33px;
+          flex-wrap: wrap;
+        }
+        .giocare{
+          padding: 13px 2rem;
+          margin: 20px;
+        }
+        .gioca_titolo{
+          margin: 18px;
+        }
+       } 
+        
+        
+    /* QUIZ SECTION */
+         .body-quiz{ 
+          background: rgb(0,0,0);
+          background: -moz-linear-gradient(top, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+          background: -webkit-linear-gradient(top, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+          background: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+         }
+    
+          .quiz_section {
+           display: flex;
+           flex-direction: column;
+           height: auto;
+           min-height: auto;
+           flex-wrap: wrap;  
+          }
+          .iniza-btn, .btn-vai-Home{
+          font-size: 30px;    
+          width: 200px;
+          background-color: transparent;
+          border-color: var(--colore-secondario);
+          box-shadow: inset 2px -7px 20px 6px var(--colore-secondario);
+          color: var(--font-base);
+          border-radius: 16px;
+          margin: 10px;
+          }
+          .btn-vai-Home{
+          text-align: center;
+          text-decoration: none;
+          height: 72px;
+          }
+  
+          .quiz_conteiner_list {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           padding: 40px;
+          
+          }
+          .titolo_sect {
+          border-radius: 20px;
+          max-width: 500px;
+          font-family: 'Cormorant Garamond',Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif';
+          color: var(--colore-quarto);
+          font-weight: 500;
+          font-size: 36px;
+          background-color: transparent;
+          }
+          .didascalia_quiz {
+          max-width: 500px;
+          font-family: 'Cormorant Garamond','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+          color: var(--font-base);
+          font-weight: 500;
+          font-size: 26px;
+          background-color: transparent;
+          }
+          .card_quiz {
+           display: flex;
+           flex-direction: column;
+           max-width: 300px;
+           max-height: 600px;
+           border: 1px solid  #45becd;
+           padding: 20px;
+           border-radius: 15px;
+           background-color: transparent;
+           box-shadow: inset 2px -7px 20px 6px var(--colore-secondario);
+          }
+          .titoloDom {
+          color: #507cce;
+          text-align: center;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          font-size: 20px;
+          margin: 20px;
+          }
+          .info_quiz {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+           
+          } 
+          .risposta {
+          width: 90%;
+          font-size: 18px;
+          padding: 15px;
+          background-color: transparent;
+          border-color: var(--colore-secondario);
+          box-shadow: inset 2px -7px 20px 6px var(--colore-secondario);
+          color: var(--font-base);
+          border-radius: 15px;
+          margin-bottom: 15px;
+  
+          }
+          .risposta:hover, .iniza-btn:hover, .btn-vai-Home:hover, .btn-vai-Quiz:hover {
+          color: #f5b1aa;
+          text-shadow: -1px 0 #925460, 0 1px #925460, 1px 0 #925460, 0 -1px #925460;
+          }
+          .correct {
+          background-color: #00800099;
+          }
+          .incorrect {
+           background-color: #c95a6e;
+          }
+          .win, .lose {
+          width: 50%;
+          font-size: 30px;
+          padding: 15px;
+          background-color: transparent;
+          border-color: var(--colore-secondario);
+          box-shadow: inset 2px -7px 20px 6px var(--colore-secondario);
+          color: #f5b1aa;
+          text-shadow: -1px 0 #925460, 0 1px #925460, 1px 0 #925460, 0 -1px #925460;
+          border-radius: 15px;
+          text-align: center;
+          }
+
+   @media(min-width: 850px){
+    .card_quiz {
+      display: flex ;
+      flex-direction: row;
+      max-width: 800px;
+      max-height: 600px;
+      align-items: center;
+      padding: 46px;
+    }
+    .titoloDom{
+      max-width: 250px;
+      font-size: 25px;
+      margin: 5px;
+
+    }     
+   .info_quiz{
+    min-width: 450px;
+
+   }
+
+
+  }  
+   @media(max-width: 400px) {
+   .quiz_conteiner_list{
+     padding: 0;
+     margin: 2rem 1rem;
+    
+    } 
+    .didascalia_quiz{
+     margin: 18px;
+    }
+   }    
+       
+  
+      /* FOOTER */
+   
+      
+      footer {
+          /* background-color: var(--colore-background); */
+          color: var(--font-base);
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          margin-bottom: 0;
+          border-top: white solid;
+         
+      }
+  
+      .footer_info{
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-wrap: wrap;
+          padding: 5px;
+      }
+  
+      .footer-logo{
+          width: 300px;
+      }
+      .footer-logo > img{
+          width: 100%;
+          object-fit: cover;
+      }
+  
+      .footer-contact-title {
+          font-size: 30px;
+          font-weight: 900;
+          border-bottom: solid;
+          font-family: 'Cormorant Garamond';
+      }
+      .footer-contact img{
+        width: 4rem;
+      }
+      .btn-torna-su{
+      font-family: 'Cormorant Garamond';
+      font-size: 20px;
+      width: 150px;
+      height: 68px;
+      background-color: transparent;
+      border-color: var(--colore-secondario);
+      box-shadow: inset 2px -7px 20px 6px var(--colore-secondario);
+      color: var(--font-base);
+      border-radius: 16px;
+      margin: 10px;
+      }
+  
+      .footer-logo, .footer-sali {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          padding: 20px;
+      }
+      .footer-contact{
+          flex-direction: column;
+          flex: 1.5;
+          padding-bottom: 25px;
+  
+      }
+  
+      .footer-contatti {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 12px;
+          font-size: 19px;
+      }
+  
+      .copyright-section {
+          border-top: solid white;
+          min-height: 50px;
+          display: flex;
+          justify-content: center;
+          color: var(--colore-quarto);
+          padding: 10px;
+      }
+      @media(max-width: 800px) {
+          .footer_info{
+              flex-direction: column;
+              
+          }
+        
+      }
+      @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+      }
+      
+       .win, .lose , .footlogo{
+          animation: bounce 1s infinite alternate;
+      }
+      .iub__us-widget{
+        background-color: transparent;
+      }
+      .iub__us-widget__wrapper{
+        background-color: transparent;
+        border-color: var(--colore-secondario);
+        box-shadow: inset 2px -7px 20px 6px var(--colore-secondario);
+        color: var(--colore-background);
+        border-radius: 16px;
+        margin: 10px;
+        
+      }
+      .iubenda-tp-btn.iubenda-cs-preferences-link{
+        width: 7px;
+       }
+
+
+    /* PAGINA RICERCA    */
+    
+
+    #body-cerca{
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(top, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+    background: -webkit-linear-gradient(top, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+    background: linear-gradient(to bottom, rgb(0,0,0) 0%, rgb(10,22,70) 48%, rgb(0,0,0) 100%);
+
+    }
+
+    .navbar_main_pc {
+        align-items: center;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 7px;
+      }
+      
+      .searchs_pc {
+        display: flex;
+        gap: 10px;
+        margin: 20px;
+        min-height: 2rem;
+        min-width: 15rem;
+        border-radius: 14px;
+        padding: 10px 20px;
+        box-shadow: inset 4px -5px 12px 1px #0091ff;
+        background-color: transparent;
+      }
+      
+      .search_input_p{
+        color: var(--font-base);
+        font-size: 20px;
+        min-height: 100%;
+        min-width: 15rem;
+        padding: 10px 5px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        
+      }
+      
+      .searchbtn_pc{
+        border: none;
+        background-color: transparent;
+        
+      }
+      .searchbtn_pc img{
+       width: 50px;
+      }
+     .logo_pc{
+        width: 300px;
+     } 
+      
+    .logo_pc img{
+        width: 100%;
+        object-fit: cover;
+    } 
+    .torna-home-btn{
+        background-color: transparent;
+        width: 50px;
+        border: 2px solid #29f6f4;
+        border-radius: 10px;
+        
+    }
+    .torna-home-btn img{
+        object-fit: cover;
+        width: 100%;
+    }
+    .tasti-pag-cerca{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-left: auto;
+
+    }       
+
+    #main-cerca{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 26px;
+        padding: 40px  30px;
+        
+        
+    }
+
+    .card-cerca {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        min-height: 480px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        background-image: url("asset/img/sfondo-card.webp");
+        justify-content: flex-start
+      }
+      
+      .card-cerca img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
+        color: white;
+      }
+      
+      .nome {
+        padding: 10px;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        font-family: "Cormorant Garamond";
+      }
+      
+      .card-cerca .rating {
+        font-size: 19px;
+        color: rgb(200, 200, 32);
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-family: "Cormorant Garamond";
+        font-weight: bold;
+      }
+      
+      .card-cerca .release,  .card-cerca .type {
+        font-size: 19px;
+        margin-bottom: 20px;
+        color: white;
+        font-family: "Cormorant Garamond";
+        font-weight: bold;
+        padding: 0 9px;
+      }
+      
+      .card-cerca .description{
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-image: url("asset/img/sfondo-card.webp");
+        color: white;
+        padding: 15px;
+        box-sizing: border-box;
+        transition: bottom 0.5s ease-in-out;
+        height: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        font-family: "Cormorant Garamond";
+        font-weight: bold;
+      }
+      
+      .card-cerca:hover .description {
+        bottom: 0;
+      }
+
+
+    .presentazione{
+        display: flex;
+        justify-content: center;
+        color:white
+    }
+
+    .presentazione h2{
+      width: 50%;
+      font-size: 45px;
+      padding: 30px;
+    }
+    
+    @media(max-width: 400px) {
+      .presentazione h2{
+        width: 100%;
+        font-size: 45px;
+        padding: 2px;
+      }
+      .navbar_main_pc{
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+     
+      .search_input_p{
+        width: 3rem;
+        min-width: 10rem;
+      }
+      .tasti-pag-cerca{
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+
+    
