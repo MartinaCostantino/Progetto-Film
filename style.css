@@ -283,6 +283,7 @@ footer {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin-bottom: 0;
   border-top: white solid;
+  margin-top: 90px;
 }
 
 .footer_info {
@@ -485,11 +486,18 @@ footer {
 .card-cerca {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 280px;
   min-height: 480px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  position: relative;
   background-image: url("asset/img/sfondo-card.webp");
-  justify-content: flex-start;
+  justify-content: flex-start
 }
+
 
 .card-cerca img {
   width: 100%;
@@ -536,12 +544,12 @@ footer {
   padding: 15px;
   box-sizing: border-box;
   transition: bottom 0.5s ease-in-out;
-  height: 100%;
+  height: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Cormorant Garamond";
   font-weight: bold;
 }
@@ -587,13 +595,13 @@ footer {
  HEADER */
 
 * {
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(11, 13, 102);
+  /* background-color: rgb(11, 13, 102); */
   color: rgb(255, 255, 255);
 }
 
@@ -1080,7 +1088,7 @@ body {
   }
 }
 .containerCardDal {
-  background-color: #042260;
+  /* background-color: #042260; */
   width: 100%;
   margin: 0;
   padding: 20px;
@@ -1092,7 +1100,7 @@ h3 {
 }
 
 .caroselloContainerFilmDal {
-  background-color: #042260;
+  /* background-color: #042260; */
   display: flex;
   overflow-x: hidden;
   flex-grow: 1;
@@ -1106,7 +1114,7 @@ h3 {
 }
 
 .caroselloContainerSerieDal {
-  background-color: #042260;
+  /* background-color: #042260; */
   display: flex;
   overflow-x: hidden;
   flex-grow: 1;
@@ -1120,7 +1128,7 @@ h3 {
 }
 
 .caroselloContainerTopDal {
-  background-color: #042260;
+  /* background-color: #042260; */
   display: flex;
   overflow-x: hidden;
   flex-grow: 1;
@@ -1350,20 +1358,11 @@ h3 {
     gap: 20px;
   }
 }
-:root {
-  --colore-principale: #00ffff;
-  --colore-secondario: #45becd;
-  --font-base: white;
-  --colore-background: #042260;
-  --colore-terzo: #aeeeee;
-  --colore-quarto: #09aee0;
-  --font-uno: "Cormorant Garamond";
-  --font-due: "Gill Sans";
-}
 
-body {
+
+/* body {
   background-color: var(--colore-background);
-}
+} */
 
 .carousel-container-a {
   position: relative;
@@ -1375,7 +1374,7 @@ body {
 .carousel-a {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
+  gap: 40px;
   padding: 20px;
 }
 
@@ -1408,7 +1407,7 @@ body {
 .card-anime {
   display: flex;
   flex-direction: column;
-  min-width: 250px;
+  min-width: 280px;
   min-height: 480px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
