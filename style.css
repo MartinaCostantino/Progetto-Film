@@ -2,7 +2,7 @@ body {
   background-color: #042260;
 }
 
-.containerCardMovies {
+.containerCardDal {
   background-color: #042260;
   width: 100%;
   margin: 0;
@@ -14,7 +14,7 @@ h3 {
   font-size: 40px;
 }
 
-.caroselloContainerFilm {
+.caroselloContainerFilmDal {
   background-color: #042260;
   display: flex;
   overflow-x: hidden;
@@ -28,7 +28,7 @@ h3 {
   overflow: hidden;
 }
 
-.caroselloContainerSerie {
+.caroselloContainerSerieDal {
   background-color: #042260;
   display: flex;
   overflow-x: hidden;
@@ -42,7 +42,7 @@ h3 {
   overflow: hidden;
 }
 
-.caroselloContainerTop {
+.caroselloContainerTopDal {
   background-color: #042260;
   display: flex;
   overflow-x: hidden;
@@ -56,7 +56,7 @@ h3 {
   overflow: hidden;
 }
 
-.carosello {
+.caroselloDal {
   display: flex;
   gap: 30px;
   overflow-x: auto;
@@ -65,11 +65,11 @@ h3 {
   overflow: hidden;
 }
 
-.carousel::-webkit-scrollbar {
+.caroselloDal::-webkit-scrollbar {
   display: none;
 }
 
-.caroselloSerie {
+.caroselloSerieDal {
   display: flex;
   gap: 30px;
   overflow-x: auto;
@@ -77,11 +77,11 @@ h3 {
   width: 100%;
   overflow: hidden;
 }
-.carousel::-webkit-scrollbar {
+.caroselloSerieDal::-webkit-scrollbar {
   display: none;
 }
 
-.caroselloTop {
+.caroselloTopDal {
   display: flex;
   gap: 30px;
   overflow-x: auto;
@@ -89,11 +89,11 @@ h3 {
   width: 100%;
   overflow: hidden;
 }
-.carousel::-webkit-scrollbar {
+.caroselloTopDal::-webkit-scrollbar {
   display: none;
 }
 
-.card {
+.cardDal {
   min-width: 280px;
   height: 500px;
   margin: 0 10px;
@@ -104,16 +104,16 @@ h3 {
   text-align: center;
   justify-content: center;
   position: relative;
-  background-image: url("sfondo.jpg");
+  background-image: url("assets/sfondo.jpg");
 }
 
-.card img {
+.cardDal img {
   width: 100%;
   height: 350px;
   object-fit: cover;
 }
 
-.card .nome {
+.cardDal .nomeDal {
   padding: 10px;
   font-size: 25px;
   font-weight: bold;
@@ -121,7 +121,7 @@ h3 {
   font-family: "Cormorant Garamond";
 }
 
-.card .rating {
+.cardDal .ratingDal {
   font-size: 16px;
   color: rgb(200, 200, 32);
   margin-bottom: 10px;
@@ -130,7 +130,7 @@ h3 {
   font-weight: bold;
 }
 
-.card .release {
+.cardDal .releaseDal {
   font-size: 16px;
   color: #555;
   margin-bottom: 20px;
@@ -139,12 +139,12 @@ h3 {
   font-weight: bold;
 }
 
-.card .description {
+.cardDal .descriptionDal {
   position: absolute;
   bottom: -100%;
   left: 0;
   width: 100%;
-  background-image: url("sfondo.jpg");
+  background-image: url("assets/sfondo.jpg");
   color: white;
   padding: 15px;
   box-sizing: border-box;
@@ -159,7 +159,7 @@ h3 {
   font-weight: bold;
 }
 
-.card:hover .description {
+.cardDal:hover .descriptionDal {
   bottom: 0;
 }
 
@@ -195,31 +195,31 @@ h3 {
     font-size: 25px;
   }
 
-  .card {
+  .cardDal {
     min-width: 200px;
     height: 370px;
   }
 
-  .card img {
+  .cardDal img {
     height: 250px;
   }
 
-  .card .nome {
+  .cardDal .nomeDal {
     padding: 10px;
     font-size: 17px;
   }
 
-  .card .rating {
+  .cardDal .ratingDal {
     font-size: 12px;
     margin-bottom: 10px;
   }
 
-  .card .release {
+  .cardDal .releaseDal {
     font-size: 15px;
     margin-bottom: 15px;
   }
 
-  .card .description {
+  .cardDal .descriptionDal {
     padding: 10px;
     height: 60%;
     font-size: 15px;
@@ -232,44 +232,44 @@ h3 {
     font-size: 17px;
   }
 
-  .card {
+  .cardDal {
     min-width: 150px;
     height: 200px;
   }
 
-  .card img {
+  .cardDal img {
     height: 120px;
   }
 
-  .card .nome {
+  .cardDal .nomeDal {
     padding: 3px;
     font-size: 12px;
   }
 
-  .card .rating {
+  .cardDal .ratingDal {
     font-size: 10px;
     margin-bottom: 2px;
   }
 
-  .card .release {
+  .cardDal .releaseDal {
     font-size: 10px;
     margin-bottom: 5px;
   }
 
-  .card .description {
+  .cardDal .descriptionDal {
     padding: 5px;
     height: 60%;
     font-size: 10px;
   }
-  .carosello {
+  .caroselloDal {
     gap: 20px;
   }
 
-  .caroselloSerie {
+  .caroselloSerieDal {
     gap: 20px;
   }
 
-  .caroselloTop {
+  .caroselloTopDal {
     gap: 20px;
   }
 }

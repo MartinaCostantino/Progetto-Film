@@ -1,7 +1,7 @@
 const API_KEY = "6dee2619";
-const carosello = document.getElementById("carosello");
-const caroselloSerie = document.getElementById("caroselloSerie");
-const caroselloTop = document.getElementById("caroselloTop");
+const caroselloDal = document.getElementById("caroselloDal");
+const caroselloSerieDal = document.getElementById("caroselloSerieDal");
+const caroselloTopDal = document.getElementById("caroselloTopDal");
 
 async function fetchMovies() {
   try {
@@ -115,161 +115,161 @@ async function fetchTopRated() {
 }
 
 function renderMovies(films) {
-  carosello.innerHTML = "";
+  caroselloDal.innerHTML = "";
 
   films.forEach((film) => {
-    const card = document.createElement("div");
-    card.className = "card";
+    const cardDal = document.createElement("div");
+    cardDal.className = "cardDal";
 
-    const immagine = document.createElement("img");
-    immagine.className = "immagine";
-    immagine.src = film.Poster !== "N/A" ? film.Poster : "placeholder.jpg";
+    const immagineDal = document.createElement("img");
+    immagineDal.className = "immagine";
+    immagineDal.src = film.Poster !== "N/A" ? film.Poster : "placeholder.jpg";
 
-    const nome = document.createElement("div");
-    nome.className = "nome";
-    nome.textContent = film.Title;
+    const nomeDal = document.createElement("div");
+    nomeDal.className = "nomeDal";
+    nomeDal.textContent = film.Title;
 
-    const rating = document.createElement("div");
-    rating.className = "rating";
-    rating.textContent =
+    const ratingDal = document.createElement("div");
+    ratingDal.className = "ratingDal";
+    ratingDal.textContent =
       film.imdbRating !== "N/A" ? `Rating: ${film.imdbRating}` : "Rating: N/A";
 
-    const releaseDate = document.createElement("div");
-    releaseDate.className = "release";
-    releaseDate.textContent = `Released: ${film.Released}`;
+    const releaseDateDal = document.createElement("div");
+    releaseDateDal.className = "releaseDal";
+    releaseDateDal.textContent = `Released: ${film.Released}`;
 
-    const description = document.createElement("div");
-    description.className = "description";
-    description.textContent =
+    const descriptionDal = document.createElement("div");
+    descriptionDal.className = "descriptionDal";
+    descriptionDal.textContent =
       film.Plot !== "N/A" ? film.Plot : "Descrizione non disponibile.";
 
-    description.style.display = "none";
+    descriptionDal.style.display = "none";
 
-    card.addEventListener("mouseover", () => {
-      description.style.display = "block";
+    cardDal.addEventListener("mouseover", () => {
+      descriptionDal.style.display = "block";
     });
 
-    card.addEventListener("mouseout", () => {
-      description.style.display = "none";
+    cardDal.addEventListener("mouseout", () => {
+      descriptionDal.style.display = "none";
     });
 
-    card.appendChild(immagine);
-    card.appendChild(nome);
-    card.appendChild(rating);
-    card.appendChild(releaseDate);
-    card.appendChild(description);
-    carosello.appendChild(card);
+    cardDal.appendChild(immagineDal);
+    cardDal.appendChild(nomeDal);
+    cardDal.appendChild(ratingDal);
+    cardDal.appendChild(releaseDateDal);
+    cardDal.appendChild(descriptionDal);
+    caroselloDal.appendChild(cardDal);
   });
 }
 
 function renderSeries(series) {
-  caroselloSerie.innerHTML = "";
+  caroselloSerieDal.innerHTML = "";
 
   series.forEach((serie) => {
-    const card = document.createElement("div");
-    card.className = "card";
+    const cardDal = document.createElement("div");
+    cardDal.className = "cardDal";
 
-    const immagine = document.createElement("img");
-    immagine.className = "immagine";
-    immagine.src = serie.Poster !== "N/A" ? serie.Poster : "placeholder.jpg";
+    const immagineDal = document.createElement("img");
+    immagineDal.className = "immagineDal";
+    immagineDal.src = serie.Poster !== "N/A" ? serie.Poster : "placeholder.jpg";
 
-    const nome = document.createElement("div");
-    nome.className = "nome";
-    nome.textContent = serie.Title;
+    const nomeDal = document.createElement("div");
+    nomeDal.className = "nomeDal";
+    nomeDal.textContent = serie.Title;
 
-    const rating = document.createElement("div");
-    rating.className = "rating";
-    rating.textContent =
+    const ratingDal = document.createElement("div");
+    ratingDal.className = "ratingDal";
+    ratingDal.textContent =
       serie.imdbRating !== "N/A"
         ? `Rating: ${serie.imdbRating}`
         : "Rating: N/A";
 
-    const releaseDate = document.createElement("div");
-    releaseDate.className = "release";
-    releaseDate.textContent = `Released: ${serie.Released}`;
+    const releaseDateDal = document.createElement("div");
+    releaseDateDal.className = "releaseDal";
+    releaseDateDal.textContent = `Released: ${serie.Released}`;
 
-    const description = document.createElement("div");
-    description.className = "description";
-    description.textContent =
+    const descriptionDal = document.createElement("div");
+    descriptionDal.className = "descriptionDal";
+    descriptionDal.textContent =
       serie.Plot !== "N/A" ? serie.Plot : "Descrizione non disponibile.";
 
-    description.style.display = "none";
+    descriptionDal.style.display = "none";
 
-    card.addEventListener("mouseover", () => {
-      description.style.display = "block";
+    cardDal.addEventListener("mouseover", () => {
+      descriptionDal.style.display = "block";
     });
 
-    card.addEventListener("mouseout", () => {
-      description.style.display = "none";
+    cardDal.addEventListener("mouseout", () => {
+      descriptionDal.style.display = "none";
     });
 
-    card.appendChild(immagine);
-    card.appendChild(nome);
-    card.appendChild(rating);
-    card.appendChild(releaseDate);
-    card.appendChild(description);
-    caroselloSerie.appendChild(card);
+    cardDal.appendChild(immagineDal);
+    cardDal.appendChild(nomeDal);
+    cardDal.appendChild(ratingDal);
+    cardDal.appendChild(releaseDateDal);
+    cardDal.appendChild(descriptionDal);
+    caroselloSerieDal.appendChild(cardDal);
   });
 }
 
 function renderTopRated(tops) {
-  caroselloTop.innerHTML = "";
+  caroselloTopDal.innerHTML = "";
 
   tops.forEach((top) => {
-    const card = document.createElement("div");
-    card.className = "card";
+    const cardDal = document.createElement("div");
+    cardDal.className = "cardDal";
 
-    const immagine = document.createElement("img");
-    immagine.className = "immagine";
-    immagine.src = top.Poster !== "N/A" ? top.Poster : "placeholder.jpg";
+    const immagineDal = document.createElement("img");
+    immagineDal.className = "immagineDal";
+    immagineDal.src = top.Poster !== "N/A" ? top.Poster : "placeholder.jpg";
 
-    const nome = document.createElement("div");
-    nome.className = "nome";
-    nome.textContent = top.Title;
+    const nomeDal = document.createElement("div");
+    nomeDal.className = "nomeDal";
+    nomeDal.textContent = top.Title;
 
-    const rating = document.createElement("div");
-    rating.className = "rating";
-    rating.textContent =
+    const ratingDal = document.createElement("div");
+    ratingDal.className = "ratingDal";
+    ratingDal.textContent =
       top.imdbRating !== "N/A" ? `Rating: ${top.imdbRating}` : "Rating: N/A";
 
-    const releaseDate = document.createElement("div");
-    releaseDate.className = "release";
-    releaseDate.textContent = `Released: ${top.Released}`;
+    const releaseDateDal = document.createElement("div");
+    releaseDateDal.className = "releaseDal";
+    releaseDateDal.textContent = `Released: ${top.Released}`;
 
-    const description = document.createElement("div");
-    description.className = "description";
-    description.textContent =
+    const descriptionDal = document.createElement("div");
+    descriptionDal.className = "descriptionDal";
+    descriptionDal.textContent =
       top.Plot !== "N/A" ? top.Plot : "Descrizione non disponibile.";
 
-    description.style.display = "none";
+    descriptionDal.style.display = "none";
 
-    card.addEventListener("mouseover", () => {
-      description.style.display = "block";
+    cardDal.addEventListener("mouseover", () => {
+      descriptionDal.style.display = "block";
     });
 
-    card.addEventListener("mouseout", () => {
-      description.style.display = "none";
+    cardDal.addEventListener("mouseout", () => {
+      descriptionDal.style.display = "none";
     });
 
-    card.appendChild(immagine);
-    card.appendChild(nome);
-    card.appendChild(rating);
-    card.appendChild(releaseDate);
-    card.appendChild(description);
-    caroselloTop.appendChild(card);
+    cardDal.appendChild(immagineDal);
+    cardDal.appendChild(nomeDal);
+    cardDal.appendChild(ratingDal);
+    cardDal.appendChild(releaseDateDal);
+    cardDal.appendChild(descriptionDal);
+    caroselloTopDal.appendChild(cardDal);
   });
 }
 
 function scrollCarouselF(direction) {
-  carosello.scrollBy({ left: direction, behavior: "smooth" });
+  caroselloDal.scrollBy({ left: direction, behavior: "smooth" });
 }
 
 function scrollCarouselS(direction) {
-  caroselloSerie.scrollBy({ left: direction, behavior: "smooth" });
+  caroselloSerieDal.scrollBy({ left: direction, behavior: "smooth" });
 }
 
 function scrollCarouselT(direction) {
-  caroselloTop.scrollBy({ left: direction, behavior: "smooth" });
+  caroselloTopDal.scrollBy({ left: direction, behavior: "smooth" });
 }
 
 fetchMovies();
