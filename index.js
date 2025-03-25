@@ -94,83 +94,86 @@ function soluzione(buttonRisp, risp, correct_answer) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // HEADER
-// const hamMenu = document.querySelector(".ham-menu");
-// const offScreenMenu = document.querySelector(".off-screen-menu");
+const hamMenu = document.querySelector(".ham-menu");
+const offScreenMenu = document.querySelector(".off-screen-menu");
 
-// hamMenu.addEventListener("click", () => {
-//   hamMenu.classList.toggle("active");
-//   offScreenMenu.classList.toggle("active");
-// });
+hamMenu.addEventListener("click", () => {
+  hamMenu.classList.toggle("active");
+  offScreenMenu.classList.toggle("active");
+});
 
-// // carosello grande
-// let nextDom = document.getElementById("next");
-// let prevDom = document.getElementById("prev");
+// carosello grande
 
-// let carouselDom = document.querySelector(".carousel");
-// let SliderDom = carouselDom.querySelector(".carousel .list");
-// let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
-// let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
-// let timeDom = document.querySelector(".carousel .time");
+let nextDom = document.getElementById("next");
+let prevDom = document.getElementById("prev");
 
-// thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-// let timeRunning = 3000;
-// let timeAutoNext = 7000;
+let navbar = document.getElementsByClassName("navbar_main");
 
-// nextDom.onclick = function () {
-//   showSlider("next");
-// };
+let carouselDom = document.querySelector(".carousel");
+let SliderDom = carouselDom.querySelector(".carousel .list");
+let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+let timeDom = document.querySelector(".carousel .time");
 
-// prevDom.onclick = function () {
-//   showSlider("prev");
-// };
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
 
-// let runTimeOut;
-// let runNextAuto = setTimeout(() => {
-//   nextDom.click();
-// }, timeAutoNext);
+nextDom.onclick = function () {
+  showSlider("next");
+};
 
-// function showSlider(type) {
-//   let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
-//   let thumbnailItemsDom = document.querySelectorAll(
-//     ".carousel .thumbnail .item"
-//   );
+prevDom.onclick = function () {
+  showSlider("prev");
+};
 
-//   if (type === "next") {
-//     SliderDom.appendChild(SliderItemsDom[0]);
-//     thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-//     carouselDom.classList.add("next");
-//   } else {
-//     SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-//     thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-//     carouselDom.classList.add("prev");
-//   }
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+  nextDom.click();
+}, timeAutoNext);
 
-//   clearTimeout(runTimeOut);
-//   runTimeOut = setTimeout(() => {
-//     carouselDom.classList.remove("next");
-//     carouselDom.classList.remove("prev");
-//   }, timeRunning);
+function showSlider(type) {
+  let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
+  let thumbnailItemsDom = document.querySelectorAll(
+    ".carousel .thumbnail .item"
+  );
 
-//   clearTimeout(runNextAuto);
-//   runNextAuto = setTimeout(() => {
-//     nextDom.click();
-//   }, timeAutoNext);
-// }
+  if (type === "next") {
+    SliderDom.appendChild(SliderItemsDom[0]);
+    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+    carouselDom.classList.add("next");
+  } else {
+    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+    carouselDom.classList.add("prev");
+  }
 
-// function updateThumbnails() {
-//   const thumbnailContainer = document.querySelector(".carousel .thumbnail");
-//   if (thumbnailContainer) {
-//     thumbnailContainer.style.width = "0";
-//     thumbnailContainer.style.height = "0";
-//     thumbnailContainer.style.opacity = "0";
-//     thumbnailContainer.style.overflow = "hidden";
-//     thumbnailContainer.style.pointerEvents = "none";
-//     thumbnailContainer.style.visibility = "hidden";
-//   }
-// }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    carouselDom.classList.remove("next");
+    carouselDom.classList.remove("prev");
+  }, timeRunning);
 
-// window.addEventListener("load", updateThumbnails);
-// window.addEventListener("resize", updateThumbnails);
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+    nextDom.click();
+  }, timeAutoNext);
+}
+
+function updateThumbnails() {
+  const thumbnailContainer = document.querySelector(".carousel .thumbnail");
+  if (thumbnailContainer) {
+    thumbnailContainer.style.width = "0";
+    thumbnailContainer.style.height = "0";
+    thumbnailContainer.style.opacity = "0";
+    thumbnailContainer.style.overflow = "hidden";
+    thumbnailContainer.style.pointerEvents = "none";
+    thumbnailContainer.style.visibility = "hidden";
+  }
+}
+
+window.addEventListener("load", updateThumbnails);
+window.addEventListener("resize", updateThumbnails);
 
 // FILM
 
@@ -503,19 +506,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.error("Nessuna card da visualizzare");
     }
   }
-
-  // let scrollAmount = 0;
-  // const scrollStep = 300;
-
-  // nextButton.addEventListener("click", () => {
-  //     scrollAmount += scrollStep;
-  //     carousel.style.transform = `translateX(-${scrollAmount}px)`;
-  // });
-
-  // prevButton.addEventListener("click", () => {
-  //     scrollAmount = Math.max(scrollAmount - scrollStep, 0);
-  //     carousel.style.transform = `translateX(-${scrollAmount}px)`;
-  // });
 
   await loadCarousel();
 });

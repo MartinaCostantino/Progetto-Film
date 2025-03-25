@@ -605,7 +605,6 @@ body {
   padding: 2%;
   justify-content: space-between;
   background-color: rgb(11, 13, 102);
-
   z-index: 2;
   background-color: transparent;
 }
@@ -770,7 +769,6 @@ body {
 }
 
 .carousel {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
