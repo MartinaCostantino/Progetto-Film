@@ -1,12 +1,8 @@
-body {
-  background-color: #042260;
-}
-
 .containerCardDal {
   background-color: #042260;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 h3 {
