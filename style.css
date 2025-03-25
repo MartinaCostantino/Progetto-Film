@@ -1,4 +1,3 @@
-
 :root {
   --colore-principale: #00ffff;
   --colore-secondario: #45becd;
@@ -501,14 +500,12 @@ footer {
 }
 
 .card-cerca .nome {
-
   padding: 10px;
   font-size: 25px;
   font-weight: bold;
   color: white;
   font-family: "Cormorant Garamond";
 }
-
 
 .card-cerca .rating {
   font-size: 19px;
@@ -518,7 +515,6 @@ footer {
   font-family: "Cormorant Garamond";
   font-weight: bold;
 }
-
 
 .card-cerca .release,
 .card-cerca .type {
@@ -531,7 +527,6 @@ footer {
 }
 
 .card-cerca .description {
-
   position: absolute;
   bottom: -100%;
   left: 0;
@@ -541,7 +536,7 @@ footer {
   padding: 15px;
   box-sizing: border-box;
   transition: bottom 0.5s ease-in-out;
-  height: 60%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1189,17 +1184,16 @@ h3 {
   background-image: url("asset/img/sfondo-card.webp");
   display: flex;
   flex-direction: column;
-  
 }
 
-.cardDal img{
-  height: 250px;
+.cardDal img {
+  height: 350px;
   object-fit: cover;
   object-position: top;
   width: 100%;
 }
 
-.cardDal .nomeDal{
+.cardDal .nomeDal {
   padding: 10px;
   font-size: 25px;
   font-weight: bold;
@@ -1212,9 +1206,7 @@ h3 {
   margin-bottom: 10px;
   font-weight: bold;
   font-family: "Cormorant Garamond";
- 
 }
-
 
 .cardDal .releaseDal {
   font-size: 16px;
@@ -1358,4 +1350,4 @@ h3 {
   .caroselloTopDal {
     gap: 20px;
   }
-}  
+}
