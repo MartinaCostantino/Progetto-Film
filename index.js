@@ -1,3 +1,4 @@
+
 // QUIZ
 const navBarQuiz = document.querySelector(".navbar_main_pc");
 const inizaBtn = document.querySelector(".iniza-btn");
@@ -57,7 +58,7 @@ function creaDomanda(question) {
   card_quiz.appendChild(info_quiz);
   quiz_conteiner_list.appendChild(card_quiz);
 }
-inizaBtn.addEventListener("click", trivia);
+// inizaBtn.addEventListener("click", trivia);
 
 function soluzione(buttonRisp, risp, correct_answer) {
   const risposte = document.querySelectorAll(".risposta");
@@ -94,80 +95,362 @@ function soluzione(buttonRisp, risp, correct_answer) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // HEADER
-const hamMenu = document.querySelector(".ham-menu");
-const offScreenMenu = document.querySelector(".off-screen-menu");
+// const hamMenu = document.querySelector(".ham-menu");
+// const offScreenMenu = document.querySelector(".off-screen-menu");
 
-hamMenu.addEventListener("click", () => {
-  hamMenu.classList.toggle("active");
-  offScreenMenu.classList.toggle("active");
-});
+// hamMenu.addEventListener("click", () => {
+//   hamMenu.classList.toggle("active");
+//   offScreenMenu.classList.toggle("active");
+// });
 
-// carosello grande
-let nextDom = document.getElementById("next");
-let prevDom = document.getElementById("prev");
+// // carosello grande
+// let nextDom = document.getElementById("next");
+// let prevDom = document.getElementById("prev");
 
-let carouselDom = document.querySelector(".carousel");
-let SliderDom = carouselDom.querySelector(".carousel .list");
-let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
-let timeDom = document.querySelector(".carousel .time");
+// let carouselDom = document.querySelector(".carousel");
+// let SliderDom = carouselDom.querySelector(".carousel .list");
+// let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+// let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+// let timeDom = document.querySelector(".carousel .time");
 
-thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 3000;
-let timeAutoNext = 7000;
+// thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+// let timeRunning = 3000;
+// let timeAutoNext = 7000;
 
-nextDom.onclick = function () {
-  showSlider("next");
-};
+// nextDom.onclick = function () {
+//   showSlider("next");
+// };
 
-prevDom.onclick = function () {
-  showSlider("prev");
-};
+// prevDom.onclick = function () {
+//   showSlider("prev");
+// };
 
-let runTimeOut;
-let runNextAuto = setTimeout(() => {
-  nextDom.click();
-}, timeAutoNext);
+// let runTimeOut;
+// let runNextAuto = setTimeout(() => {
+//   nextDom.click();
+// }, timeAutoNext);
 
-function showSlider(type) {
-  let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
-  let thumbnailItemsDom = document.querySelectorAll(
-    ".carousel .thumbnail .item"
-  );
+// function showSlider(type) {
+//   let SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
+//   let thumbnailItemsDom = document.querySelectorAll(
+//     ".carousel .thumbnail .item"
+//   );
 
-  if (type === "next") {
-    SliderDom.appendChild(SliderItemsDom[0]);
-    thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-    carouselDom.classList.add("next");
-  } else {
-    SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-    thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-    carouselDom.classList.add("prev");
+//   if (type === "next") {
+//     SliderDom.appendChild(SliderItemsDom[0]);
+//     thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+//     carouselDom.classList.add("next");
+//   } else {
+//     SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+//     thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+//     carouselDom.classList.add("prev");
+//   }
+
+//   clearTimeout(runTimeOut);
+//   runTimeOut = setTimeout(() => {
+//     carouselDom.classList.remove("next");
+//     carouselDom.classList.remove("prev");
+//   }, timeRunning);
+
+//   clearTimeout(runNextAuto);
+//   runNextAuto = setTimeout(() => {
+//     nextDom.click();
+//   }, timeAutoNext);
+// }
+
+// function updateThumbnails() {
+//   const thumbnailContainer = document.querySelector(".carousel .thumbnail");
+//   if (thumbnailContainer) {
+//     thumbnailContainer.style.width = "0";
+//     thumbnailContainer.style.height = "0";
+//     thumbnailContainer.style.opacity = "0";
+//     thumbnailContainer.style.overflow = "hidden";
+//     thumbnailContainer.style.pointerEvents = "none";
+//     thumbnailContainer.style.visibility = "hidden";
+//   }
+// }
+
+// window.addEventListener("load", updateThumbnails);
+// window.addEventListener("resize", updateThumbnails);
+
+// FILM
+
+const API_KEY = "6dee2619";
+const caroselloDal = document.getElementById("caroselloDal");
+const caroselloSerieDal = document.getElementById("caroselloSerieDal");
+const caroselloTopDal = document.getElementById("caroselloTopDal");
+
+async function fetchMovies() {
+  try {
+    const currentYear = "2025";
+    const SEARCH_QUERY = "movie";
+    const responseMovies = await fetch(
+      `http://www.omdbapi.com/?s=${SEARCH_QUERY}&y=${currentYear}&type=movie&apikey=6dee2619`
+    );
+    const result = await responseMovies.json();
+    console.log(result)
+    if (result.Search) {
+      const moviesDetails = await Promise.all(
+        result.Search.map(async (movie) => {
+          const detailsResponse = await fetch(
+            `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
+          );
+          return await detailsResponse.json();
+        })
+      );
+
+      const sortedMovies = moviesDetails
+        .filter((movie) => movie.Released !== "N/A")
+        .sort((a, b) => new Date(b.Released) - new Date(a.Released))
+        .slice(0, 20);
+      renderMovies(sortedMovies);
+    } else {
+      console.error("Nessun film trovato");
+    }
+  } catch (error) {
+    console.error(error);
   }
-
-  clearTimeout(runTimeOut);
-  runTimeOut = setTimeout(() => {
-    carouselDom.classList.remove("next");
-    carouselDom.classList.remove("prev");
-  }, timeRunning);
-
-  clearTimeout(runNextAuto);
-  runNextAuto = setTimeout(() => {
-    nextDom.click();
-  }, timeAutoNext);
 }
 
-function updateThumbnails() {
-  const thumbnailContainer = document.querySelector(".carousel .thumbnail");
-  if (thumbnailContainer) {
-    thumbnailContainer.style.width = "0";
-    thumbnailContainer.style.height = "0";
-    thumbnailContainer.style.opacity = "0";
-    thumbnailContainer.style.overflow = "hidden";
-    thumbnailContainer.style.pointerEvents = "none";
-    thumbnailContainer.style.visibility = "hidden";
+async function fetchSeries() {
+  try {
+    const currentYear = "2024";
+    const responseSeries = await fetch(
+      `http://www.omdbapi.com/?s=series&y=${currentYear}&type=series&apikey=${API_KEY}`
+    );
+    const result = await responseSeries.json();
+
+    if (result.Search) {
+      const seriesDetails = await Promise.all(
+        result.Search.map(async (series) => {
+          const detailsResponse = await fetch(
+            `http://www.omdbapi.com/?i=${series.imdbID}&apikey=${API_KEY}`
+          );
+          return await detailsResponse.json();
+        })
+      );
+
+      const sortedSeries = seriesDetails
+        .filter((series) => series.Released !== "N/A")
+        .sort((a, b) => new Date(b.Released) - new Date(a.Released))
+        .slice(0, 20);
+      renderSeries(sortedSeries);
+    } else {
+      console.error("Nessuna serie TV trovata");
+    }
+  } catch (error) {
+    console.error(error);
   }
 }
 
-window.addEventListener("load", updateThumbnails);
-window.addEventListener("resize", updateThumbnails);
+async function fetchTopRated() {
+  try {
+    const currentYear = "2024";
+    const movieTopResponse = await fetch(
+      `http://www.omdbapi.com/?s=movie&y=${currentYear}&type=movie&apikey=${API_KEY}`
+    );
+    const movieResult = await movieTopResponse.json();
+
+    const moviesDetails = movieResult.Search
+      ? await Promise.all(
+          movieResult.Search.map(async (movie) => {
+            const detailsResponse = await fetch(
+              `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
+            );
+            return await detailsResponse.json();
+          })
+        )
+      : [];
+
+    const seriesTopResponse = await fetch(
+      `http://www.omdbapi.com/?s=series&y=${currentYear}&type=series&apikey=${API_KEY}`
+    );
+    const seriesResult = await seriesTopResponse.json();
+
+    const seriesDetails = seriesResult.Search
+      ? await Promise.all(
+          seriesResult.Search.map(async (series) => {
+            const detailsResponse = await fetch(
+              `http://www.omdbapi.com/?i=${series.imdbID}&apikey=${API_KEY}`
+            );
+            return await detailsResponse.json();
+          })
+        )
+      : [];
+
+    const allItems = [...moviesDetails, ...seriesDetails];
+
+    const topRated = allItems
+      .filter((item) => item.imdbRating !== "N/A")
+      .sort((a, b) => parseFloat(b.imdbRating) - parseFloat(a.imdbRating))
+      .slice(0, 20);
+
+    renderTopRated(topRated);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function renderMovies(films) {
+  caroselloDal.innerHTML = "";
+
+  films.forEach((film) => {
+    const cardDal = document.createElement("div");
+    cardDal.className = "cardDal";
+
+    const immagineDal = document.createElement("img");
+    immagineDal.className = "immagine";
+    immagineDal.src = film.Poster !== "N/A" ? film.Poster : "placeholder.jpg";
+
+    const nomeDal = document.createElement("div");
+    nomeDal.className = "nomeDal";
+    nomeDal.textContent = film.Title;
+
+    const ratingDal = document.createElement("div");
+    ratingDal.className = "ratingDal";
+    ratingDal.textContent =
+      film.imdbRating !== "N/A" ? `Rating: ${film.imdbRating}` : "Rating: N/A";
+
+    const releaseDateDal = document.createElement("div");
+    releaseDateDal.className = "releaseDal";
+    releaseDateDal.textContent = `Released: ${film.Released}`;
+
+    const descriptionDal = document.createElement("div");
+    descriptionDal.className = "descriptionDal";
+    descriptionDal.textContent =
+      film.Plot !== "N/A" ? film.Plot : "Descrizione non disponibile.";
+
+    descriptionDal.style.display = "none";
+
+    cardDal.addEventListener("mouseover", () => {
+      descriptionDal.style.display = "block";
+    });
+
+    cardDal.addEventListener("mouseout", () => {
+      descriptionDal.style.display = "none";
+    });
+
+    cardDal.appendChild(immagineDal);
+    cardDal.appendChild(nomeDal);
+    cardDal.appendChild(ratingDal);
+    cardDal.appendChild(releaseDateDal);
+    cardDal.appendChild(descriptionDal);
+    caroselloDal.appendChild(cardDal);
+  });
+}
+
+function renderSeries(series) {
+  caroselloSerieDal.innerHTML = "";
+
+  series.forEach((serie) => {
+    const cardDal = document.createElement("div");
+    cardDal.className = "cardDal";
+
+    const immagineDal = document.createElement("img");
+    immagineDal.className = "immagineDal";
+    immagineDal.src = serie.Poster !== "N/A" ? serie.Poster : "placeholder.jpg";
+
+    const nomeDal = document.createElement("div");
+    nomeDal.className = "nomeDal";
+    nomeDal.textContent = serie.Title;
+
+    const ratingDal = document.createElement("div");
+    ratingDal.className = "ratingDal";
+    ratingDal.textContent =
+      serie.imdbRating !== "N/A"
+        ? `Rating: ${serie.imdbRating}`
+        : "Rating: N/A";
+
+    const releaseDateDal = document.createElement("div");
+    releaseDateDal.className = "releaseDal";
+    releaseDateDal.textContent = `Released: ${serie.Released}`;
+
+    const descriptionDal = document.createElement("div");
+    descriptionDal.className = "descriptionDal";
+    descriptionDal.textContent =
+      serie.Plot !== "N/A" ? serie.Plot : "Descrizione non disponibile.";
+
+    descriptionDal.style.display = "none";
+
+    cardDal.addEventListener("mouseover", () => {
+      descriptionDal.style.display = "block";
+    });
+
+    cardDal.addEventListener("mouseout", () => {
+      descriptionDal.style.display = "none";
+    });
+
+    cardDal.appendChild(immagineDal);
+    cardDal.appendChild(nomeDal);
+    cardDal.appendChild(ratingDal);
+    cardDal.appendChild(releaseDateDal);
+    cardDal.appendChild(descriptionDal);
+    caroselloSerieDal.appendChild(cardDal);
+  });
+}
+
+function renderTopRated(tops) {
+  caroselloTopDal.innerHTML = "";
+
+  tops.forEach((top) => {
+    const cardDal = document.createElement("div");
+    cardDal.className = "cardDal";
+
+    const immagineDal = document.createElement("img");
+    immagineDal.className = "immagineDal";
+    immagineDal.src = top.Poster !== "N/A" ? top.Poster : "placeholder.jpg";
+
+    const nomeDal = document.createElement("div");
+    nomeDal.className = "nomeDal";
+    nomeDal.textContent = top.Title;
+
+    const ratingDal = document.createElement("div");
+    ratingDal.className = "ratingDal";
+    ratingDal.textContent =
+      top.imdbRating !== "N/A" ? `Rating: ${top.imdbRating}` : "Rating: N/A";
+
+    const releaseDateDal = document.createElement("div");
+    releaseDateDal.className = "releaseDal";
+    releaseDateDal.textContent = `Released: ${top.Released}`;
+
+    const descriptionDal = document.createElement("div");
+    descriptionDal.className = "descriptionDal";
+    descriptionDal.textContent =
+      top.Plot !== "N/A" ? top.Plot : "Descrizione non disponibile.";
+
+    descriptionDal.style.display = "none";
+
+    cardDal.addEventListener("mouseover", () => {
+      descriptionDal.style.display = "block";
+    });
+
+    cardDal.addEventListener("mouseout", () => {
+      descriptionDal.style.display = "none";
+    });
+
+    cardDal.appendChild(immagineDal);
+    cardDal.appendChild(nomeDal);
+    cardDal.appendChild(ratingDal);
+    cardDal.appendChild(releaseDateDal);
+    cardDal.appendChild(descriptionDal);
+    caroselloTopDal.appendChild(cardDal);
+  });
+}
+
+function scrollCarouselF(direction) {
+  caroselloDal.scrollBy({ left: direction, behavior: "smooth" });
+}
+
+function scrollCarouselS(direction) {
+  caroselloSerieDal.scrollBy({ left: direction, behavior: "smooth" });
+}
+
+function scrollCarouselT(direction) {
+  caroselloTopDal.scrollBy({ left: direction, behavior: "smooth" });
+}
+
+fetchMovies();
+fetchSeries();
+fetchTopRated();
+
+// ANIME

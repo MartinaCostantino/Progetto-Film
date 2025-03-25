@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="" type="image/avif" />
@@ -28,6 +28,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
   </head>
   <body>
     <!-- <header>
@@ -170,6 +171,41 @@
         IceQuiz
       </a>
     </section>
+
+    <!-- FILM E SERIE -->
+    <div class="containerCardDal">
+      <h3>Film più recenti</h3>
+      <div class="caroselloContainerFilmDal">
+        <button class="sinistra" id="filmS" onclick="scrollCarouselF(-300)">
+          &#10094;
+        </button>
+        <div class="caroselloDal" id="caroselloDal"></div>
+        <button class="destra" id="filmD" onclick="scrollCarouselF(300)">
+          &#10095;
+        </button>
+      </div>
+      <h3>Serie TV più recenti</h3>
+      <div class="caroselloContainerSerieDal">
+        <button class="sinistra" id="serietvS" onclick="scrollCarouselS(-300)">
+          &#10094;
+        </button>
+        <div class="caroselloSerieDal" id="caroselloSerieDal"></div>
+        <button class="destra" id="serietvD" onclick="scrollCarouselS(300)">
+          &#10095;
+        </button>
+      </div>
+      <h3>Film e Serie TV più piaciuti</h3>
+      <div class="caroselloContainerTopDal">
+        <button class="sinistra" id="topS" onclick="scrollCarouselT(-300)">
+          &#10094;
+        </button>
+        <div class="caroselloTopDal" id="caroselloTopDal"></div>
+        <button class="destra" id="topD" onclick="scrollCarouselT(300)">
+          &#10095;
+        </button>
+      </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
       <div class="footer_info">
@@ -214,6 +250,7 @@
         <p>&copy; Fullstack34 Team1 <span id="year"></span></p>
       </div>
     </footer>
+
     <script src="index.js"></script>
   </body>
 </html>

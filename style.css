@@ -1,3 +1,4 @@
+
 :root {
   --colore-principale: #00ffff;
   --colore-secondario: #45becd;
@@ -487,12 +488,6 @@ footer {
   flex-direction: column;
   width: 250px;
   min-height: 480px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  justify-content: center;
-  position: relative;
   background-image: url("asset/img/sfondo-card.webp");
   justify-content: flex-start;
 }
@@ -506,12 +501,14 @@ footer {
 }
 
 .card-cerca .nome {
+
   padding: 10px;
   font-size: 25px;
   font-weight: bold;
   color: white;
   font-family: "Cormorant Garamond";
 }
+
 
 .card-cerca .rating {
   font-size: 19px;
@@ -521,6 +518,7 @@ footer {
   font-family: "Cormorant Garamond";
   font-weight: bold;
 }
+
 
 .card-cerca .release,
 .card-cerca .type {
@@ -533,6 +531,7 @@ footer {
 }
 
 .card-cerca .description {
+
   position: absolute;
   bottom: -100%;
   left: 0;
@@ -1086,3 +1085,277 @@ body {
     display: none;
   }
 }
+.containerCardDal {
+  background-color: #042260;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+}
+
+h3 {
+  color: white;
+  font-size: 40px;
+}
+
+.caroselloContainerFilmDal {
+  background-color: #042260;
+  display: flex;
+  overflow-x: hidden;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.caroselloContainerSerieDal {
+  background-color: #042260;
+  display: flex;
+  overflow-x: hidden;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.caroselloContainerTopDal {
+  background-color: #042260;
+  display: flex;
+  overflow-x: hidden;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.caroselloDal {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+}
+
+.caroselloDal::-webkit-scrollbar {
+  display: none;
+}
+
+.caroselloSerieDal {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+}
+.caroselloSerieDal::-webkit-scrollbar {
+  display: none;
+}
+
+.caroselloTopDal {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow: hidden;
+}
+.caroselloTopDal::-webkit-scrollbar {
+  display: none;
+}
+
+.cardDal {
+  min-width: 280px;
+  height: 500px;
+  margin: 0 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  justify-content: flex-start;
+  position: relative;
+  background-image: url("asset/img/sfondo-card.webp");
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.cardDal img{
+  height: 250px;
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+}
+
+.cardDal .nomeDal{
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Cormorant Garamond";
+}
+
+.cardDal .ratingDal {
+  font-size: 16px;
+  color: rgb(200, 200, 32);
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: "Cormorant Garamond";
+ 
+}
+
+
+.cardDal .releaseDal {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  color: white;
+  font-family: "Cormorant Garamond";
+  font-weight: bold;
+}
+
+.cardDal .descriptionDal {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-image: url("asset/img/sfondo-card.webp");
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: bottom 0.5s ease-in-out;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Cormorant Garamond";
+  font-weight: bold;
+}
+
+.cardDal:hover .descriptionDal {
+  bottom: 0;
+}
+
+.sinistra,
+.destra {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.301);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 24px;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.sinistra {
+  left: 10px;
+}
+
+.destra {
+  right: 10px;
+}
+
+.sinistra:hover,
+.destra:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 1020px) {
+  h3 {
+    font-size: 25px;
+  }
+
+  .cardDal {
+    min-width: 200px;
+    height: 370px;
+  }
+
+  .cardDal img {
+    height: 250px;
+  }
+
+  .cardDal .nomeDal {
+    padding: 10px;
+    font-size: 17px;
+  }
+
+  .cardDal .ratingDal {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .cardDal .releaseDal {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .cardDal .descriptionDal {
+    padding: 10px;
+    height: 60%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h3 {
+    color: white;
+    font-size: 17px;
+  }
+
+  .cardDal {
+    min-width: 150px;
+    height: 200px;
+  }
+
+  .cardDal img {
+    height: 120px;
+  }
+
+  .cardDal .nomeDal {
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  .cardDal .ratingDal {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .cardDal .releaseDal {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+
+  .cardDal .descriptionDal {
+    padding: 5px;
+    height: 60%;
+    font-size: 10px;
+  }
+  .caroselloDal {
+    gap: 20px;
+  }
+
+  .caroselloSerieDal {
+    gap: 20px;
+  }
+
+  .caroselloTopDal {
+    gap: 20px;
+  }
+}  
