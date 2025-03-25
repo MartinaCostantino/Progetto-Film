@@ -103,12 +103,10 @@ hamMenu.addEventListener("click", () => {
 });
 
 // carosello grande
+let navbar = document.getElementsByClassName("navbar_main");
 
 let nextDom = document.getElementById("next");
 let prevDom = document.getElementById("prev");
-
-let navbar = document.getElementsByClassName("navbar_main");
-
 let carouselDom = document.querySelector(".carousel");
 let SliderDom = carouselDom.querySelector(".carousel .list");
 let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");

@@ -598,7 +598,7 @@ body {
 }
 
 .navbar_main {
-  position: relative;
+  position: absolute;
   align-items: center;
   width: 100%;
   display: flex;
@@ -727,9 +727,10 @@ body {
 
 .hero_section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  flex-direction: column;
 }
 
 .hero_container_image {
