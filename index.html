@@ -61,21 +61,13 @@
         <section class="hero_section">
           <nav class="navbar_main">
             <div class="logo"><img src="asset/LOGO-ICEMOVIES.png" /></div>
-            <section class="searchs">
-              <input
-                type="text"
-                class="search_input"
-                id="search"
-                placeholder="Ricerca"
-              />
-              <a href="cerca.html" class="searchbtn">cerca</a>
-            </section>
             <div class="link_navbar">
-              <a href="">I Più Recenti</a>
-              <a href="">Serie Tv</a>
-              <a href="">I Migliori</a>
-              <a href="">Anime</a>
-              <a href="">Quiz</a>
+              <a href="cerca.html" class="searchbtn"><img src="asset/icone/icons8-ricerca-96.png" alt="carca"></a>
+              <button  onclick="window.scrollTo({ top: 900, behavior: 'smooth' })">I Più Recenti</button>
+              <button onclick="window.scrollTo({ top: 1500, behavior: 'smooth' })">Serie Tv</button>
+              <button onclick="window.scrollTo({ top: 2300, behavior: 'smooth' })">I Migliori</button>
+              <button onclick="window.scrollTo({ top: 3000, behavior: 'smooth' })" >Anime</button>
+              <button onclick="window.scrollTo({ top: 700, behavior: 'smooth' })">Quiz</button>
             </div>
             <div class="ham-menu">
               <span></span>
@@ -83,12 +75,13 @@
               <span></span>
             </div>
             <div class="off-screen-menu">
+              <a style="height: 80px; margin-left: 35px" href="cerca.html" class="searchbtn"><img style="width: 60px;" src="asset/icone/icons8-ricerca-96.png" alt="carca"></a>
               <ul>
-                <li><a href="#">I Più Recenti</a></li>
-                <li><a href="#">Serie Tv</a></li>
-                <li><a href="#">I Migliori</a></li>
-                <li><a href="#">Anime</a></li>
-                <li><a href="#">Quiz</a></li>
+              <li><button  onclick="window.scrollTo({ top: 900, behavior: 'smooth' })">I Più Recenti</button>  </li>
+              <li><button onclick="window.scrollTo({ top: 1500, behavior: 'smooth' })">Serie Tv</button></li>
+              <li><button onclick="window.scrollTo({ top: 2300, behavior: 'smooth' })">I Migliori</button></li>
+              <li><button onclick="window.scrollTo({ top: 3000, behavior: 'smooth' })" >Anime</button></li>
+              <li><button onclick="window.scrollTo({ top: 700, behavior: 'smooth' })">Quiz</button></li>
               </ul>
             </div>
           </nav>
@@ -134,7 +127,7 @@
                   <div class="description">E Molto Altro..</div>
                 </div>
               </div>
-            </div>
+            </div> 
 
             <!--Thumbnail-->
             <div class="thumbnail">
@@ -282,7 +275,7 @@
       <div class="copyright-section">
         <p>&copy; Fullstack34 Team1 <span id="year"></span></p>
       </div>
-    </footer>
+    </footer> 
 
     <script src="index.js"></script>
   </body>

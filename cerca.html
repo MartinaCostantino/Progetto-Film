@@ -94,7 +94,7 @@
         </div>
       </footer>
     <Script>
-    const main = document.getElementById("main-cerca");
+     const main = document.getElementById("main-cerca");
      const input = document.getElementById("search-p");
      const searchButton = document.querySelector(".searchbtn_pc");
      const apiKey = "202cd8db"; // per OMDB
@@ -126,7 +126,7 @@ if (data.Search) {
         .filter((movie) => movie.Released !== "N/A")
         .sort((a, b) => new Date(b.Released) - new Date(a.Released))
         showMovies(sortedMovies);
-        console.log(sortedMovies)
+        
     } else {
       console.error("Nessun film trovato");
       main.innerHTML += "<p>Nessun film trovato</p>";
