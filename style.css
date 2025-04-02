@@ -39,7 +39,7 @@ body {
   font-family: "Cormorant Garamond";
   color: var(--font-base);
   max-width: 1000px;
-  border-radius: 0px 13px 0px 21px;
+  box-shadow: 0px 0px 20px 0px #3796a7;;
   margin: 20px;
   display: flex;
   padding: 2rem;
